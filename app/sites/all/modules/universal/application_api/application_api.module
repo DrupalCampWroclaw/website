@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function application_api_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#application':
+      $output = '';
+      $output .= '<p>' . t('Application API module - helper functions') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function application_api_permission() {
+  return array(
+    'administer application' => array(
+      'title' => t('Administer application'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function application_api_menu() {
+  $items = array();
+  // Placeholder for application project page.
+  $items['admin/application'] = array(
+    'title' => 'Application',
+    'page callback' => 'application_api_admin_page',
+    'file' => 'application_api.pages.inc',
+    'access arguments' => array('administer application'),
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function application_api_menu_alter(&$items) {
+  $paths = variable_get('application_api_paths_to_remove', array());
+  //@TODO - create configuration form for variable application_api_paths_to_remove.
+  $front = variable_get('site_frontpage', 'node');
+
+  if ($front != 'node') {
+    $paths[] = 'node';
+  }
+
+  // Unset menu path.
+  if ($paths) {
+    foreach ($paths as $path) {
+      unset($items[$path]);
+    }
+  }
+}
+
+/**
+ * Revert specified features.
+ *
+ * @param $modules
+ *   Array of modules names.
+ */
+function application_api_features_revert($modules) {
+  module_load_include('inc', 'features', 'features.export');
+  features_include();
+  foreach ($modules as $module) {
+    if (($feature = feature_load($module, TRUE)) && module_exists($module)) {
+      $components = array();
+      // Forcefully revert all components of a feature.
+      foreach (array_keys($feature->info['features']) as $component) {
+        if (features_hook($component, 'features_revert')) {
+          $components[] = $component;
+        }
+      }
+    }
+    foreach ($components as $component) {
+      features_revert(array($module => array($component)));
+    }
+  }
+}
+
+/**
+ * Load new translations from .po files.
+ *
+ * @param $add_language
+ *   Set TRUE if you want to add new language to Drupal.
+ * @param $lang_code
+ *   Language code, for example 'pl'.
+ * @param  $lang_label_en
+ *   New language label in english, for example 'Polish'.
+ * @param  $lang_label_loc
+ *   New language label in local language, for example 'Polski'.
+ */
+function application_api_update_translations($add_language = FALSE, $lang_code = 'pl', $lang_label_en = 'Polish', $lang_label_loc = 'Polski') {
+  include_once './includes/locale.inc';
+  // Add language to system.
+  if ($add_language) {
+    locale_add_language($lang_code, $lang_label_en, $lang_label_loc, LANGUAGE_LTR, '', '', TRUE, TRUE);
+  }
+  // Load translations.
+  $files = file_scan_directory('sites/all', '/' . $lang_code . '.po/');
+  foreach ($files as $file) {
+    $file->filepath = $file->filename;
+    _locale_import_po($file, $lang_code, LOCALE_IMPORT_KEEP, 'default');
+  }
+}

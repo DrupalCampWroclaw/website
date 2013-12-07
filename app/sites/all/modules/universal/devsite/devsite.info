@@ -1,0 +1,14 @@
+name = Devsite
+core = 7.x
+package = APP
+version = 7.x-1.0-beta1
+project = devsite
+dependencies[] = devel
+dependencies[] = features
+dependencies[] = coder
+dependencies[] = potx
+dependencies[] = search_krumo
+features[features_api][] = api:2
+features[user_permission][] = access devel information
+features[user_permission][] = execute php code
+features[user_permission][] = switch users

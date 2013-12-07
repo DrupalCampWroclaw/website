@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * Code for the Application feature.
+ */
+
+include_once 'application.features.inc';
+
+/**
+ * Implements hook_help().
+ */
+function application_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#application':
+      $output = '';
+      $output .= '<p>' . t('Application module') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * List of all features.
+ */
+function application_features_list() {
+  $features = array(
+    'application',
+    'layout',
+  );
+  return $features;
+}
+
+

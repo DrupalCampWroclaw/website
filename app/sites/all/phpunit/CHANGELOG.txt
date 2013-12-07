@@ -1,0 +1,7 @@
+Version 2.1 - Created 2011-01-31
+- added methods variableGet, variableSet
+
+
+Version 2.0 - Created 2011-01-30
+- changed methods name to nodeSave, userSave
+- addedd method userLogout

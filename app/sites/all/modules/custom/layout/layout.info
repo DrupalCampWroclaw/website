@@ -1,0 +1,11 @@
+name = Layout
+core = 7.x
+package = APP
+version = 7.x-1.0-beta1
+project = layout
+dependencies[] = context
+dependencies[] = ctools
+features[context][] = sitewide
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+project status url = http://updates-drupal.drupalcampwroclaw.pl/release-history

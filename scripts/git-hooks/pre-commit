@@ -1,0 +1,66 @@
+#!/bin/bash
+
+echo "==================="
+echo "Pre-commit script start"
+echo "-- Script version: 2013-08-21.03"
+
+echo "Looking for debug functions..."
+#echo "Dir: "$(dirname $0)
+COUNT_DSM=0;
+COUNT_DSM=`find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'dsm(' |  wc -l`
+if [ $COUNT_DSM -gt 0 ];
+then
+  echo "ERROR: FOUND DSM(): ${COUNT_DSM}"
+  find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'dsm('
+  exit 1;
+fi
+
+#echo "Dir: "$(dirname $0)
+COUNT_DSM=0;
+COUNT_DSM=`find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'dpm(' |  wc -l`
+if [ $COUNT_DSM -gt 0 ];
+then
+  echo "ERROR: FOUND DPM(): ${COUNT_DSM}"
+  find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'dpm('
+  exit 1;
+fi
+
+COUNT_DSM=0;
+COUNT_DSM=`find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'print_r(' |  wc -l`
+if [ $COUNT_DSM -gt 0 ];
+then
+  echo "ERROR: FOUND print_r(): ${COUNT_DSM}"
+  find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'print_r('
+  exit 1;
+fi
+
+COUNT_DSM=0;
+COUNT_DSM=`find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep '/drupal_set_message' |  wc -l`
+if [ $COUNT_DSM -gt 0 ];
+then
+  echo "ERROR: FOUND /drupal_set_message(): ${COUNT_DSM}"
+  find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep '/drupal_set_message'
+  exit 1;
+fi
+
+COUNT_DSM=0;
+COUNT_DSM=`find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep '/watchdog' |  wc -l`
+if [ $COUNT_DSM -gt 0 ];
+then
+  echo "ERROR: FOUND /watchdog(): ${COUNT_DSM}"
+  find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep '/watchdog'
+  exit 1;
+fi
+
+COUNT_DSM=0;
+COUNT_DSM=`find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'console.log' |  wc -l`
+if [ $COUNT_DSM -gt 0 ];
+then
+  echo "ERROR: FOUND console.log(): ${COUNT_DSM}"
+  find app/sites/all/modules/custom -type f ! -name "*.test" | xargs grep 'console.log'
+  exit 1;
+fi
+
+echo "Success!"
+echo "Pre-commit script end"
+echo "==================="

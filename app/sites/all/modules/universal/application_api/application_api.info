@@ -1,0 +1,7 @@
+name = Application API
+description = [Universal]Helper functions
+core = 7.x
+package = APP
+version = 7.x-1.0-beta2
+project = application_api
+project status url = http://updates-drupal.droptica.com/universal/release-history

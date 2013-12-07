@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+message_file = ARGV[0]
+message = File.read(message_file)
+
+$regex = /(Issue #(\d+)|Feature #(\d+))/
+
+if !$regex.match(message)
+  puts "Your message is not formatted correctly (missing Issue #XXX or Feature #XXX)"
+  exit 1
+end

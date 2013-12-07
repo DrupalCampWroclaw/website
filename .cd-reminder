@@ -1,0 +1,9 @@
+#/bin/sh
+
+#version 2013120201
+
+echo "===="
+echo "====  Warning: check your git branch"
+echo "===="
+git branch
+git remote -v

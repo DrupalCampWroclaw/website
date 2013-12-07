@@ -1,0 +1,9 @@
+name = DrupalCamp Wroclaw
+description = DrupalCamp Wroclaw installation profile.
+
+core = 7.x
+dependencies[] = application
+
+version = "7.x-1.0-beta1"
+
+

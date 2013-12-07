@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+         stopOnFailure="false"
+         bootstrap="bootstrap.php"
+    >
+    <testsuites>
+      <testsuite name="application.test">
+            <file>sites/all/modules/custom/application/tests/application.test</file>
+      </testsuite>
+
+    </testsuites>
+
+    <logging>
+     <!--  <log type="coverage-clover" target="../build/logs/clover.xml"/>
+      <log type="coverage-html" target="../build/logs/coverage/"/> -->
+      <log type="junit" target="../build/logs/junit.xml" logIncompleteSkipped="false"/>
+    </logging>
+
+    <filter>
+    <blacklist>
+      <directory>sites/all/modules/contrib</directory>
+      <directory>sites/all/modules/developer</directory>
+      <directory>sites/all/themes</directory>
+      <directory>sites/all/translations</directory>
+      <directory>includes</directory>
+      <directory>misc</directory>
+      <directory>modules</directory>
+      <directory>profiles</directory>
+      <directory>scripts</directory>
+      <directory>themes</directory>
+    </blacklist>
+  </filter>
+
+</phpunit>

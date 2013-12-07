@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Implemments hook_install().
+ */
+function initcontent_install() {
+  for ($i = 1; $i <= 10; $i++) {
+    $params = array('username' => 'user' . $i);
+    initcontent_add_user($params);
+  }
+}
+
+/**
+ * Create company profile
+ */
+function initcontent_add_user($params) {
+  $userinfo = array(
+    'name' => $params['username'],
+    'init' => $params['username'] . '@drupalcampwroclaw.local',
+    'mail' => $params['username'] . '@drupalcampwroclaw.local',
+    'pass' => '123',
+    'status' => 1,
+    'roles' => array(
+      DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+    ),
+  );
+  $account = user_save('', $userinfo);
+  return $account;
+}

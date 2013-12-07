@@ -1,0 +1,12 @@
+## Example build command
+
+cd /path/to/local/repository && chmod +x ./scripts/build.sh && touch ./app/sites/default && chmod 777 ./app/sites/default && chmod 777 ./app/sites/default/settings.php && ./scripts/build.sh && cd app
+
+
+## Example phpunit test command
+
+cd /path/to/local/repository/app && phpunit --configuration=../conf/phpunit/phpunit.conf.xml --bootstrap=../conf/phpunit/bootstrap.php
+
+## Example coder check command
+
+cd /path/to/local/repository/app && drush en coder -y && drush coder --minor application layout

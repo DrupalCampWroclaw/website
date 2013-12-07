@@ -1,0 +1,5 @@
+name = Initcontent
+core = 7.x
+project = APP
+project status url = http://updates-drupal.drupalcampwroclaw.pl/release-history
+version = 7.x-1.0-beta1

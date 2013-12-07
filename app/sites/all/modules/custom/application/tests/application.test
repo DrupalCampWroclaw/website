@@ -1,0 +1,57 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * PHPunit tests
+ */
+
+//Include Drupal PHPunit helper functions
+require_once 'sites/all/phpunit/phpunit_drupal.php';
+
+/**
+ * Test class for Application module.
+ */
+class Application extends PHPUnit_Drupal{
+
+  public function testFeaturesDefault() {
+    print "\n";
+    $features = application_features_list();
+    module_load_include('inc', 'features', 'features.export');
+    print "Test features state 0 = FEATURES_DEFAULT, 1 = FEATURES_OVERRIDDEN, 2=FEATURES_NEEDS_REVIEW \n";
+    foreach ($features as $feature_name) {
+      $status = features_get_storage($feature_name);
+      print "Test features default: $feature_name status: $status \n";
+      $this->assertEquals(0, $status);
+    }
+  }
+
+  public function testModulesEnabled() {
+    print "\n";
+    $modules = application_features_list();
+
+    foreach ($modules as $modules_name) {
+      $result = module_exists($modules_name);
+      print "Test module enabled: {$result} [$modules_name]\n";
+      $this->assertEquals(TRUE, module_exists($modules_name));
+    }
+  }
+
+  public function testModulesDisabled() {
+    print "\n";
+    $modules = array();
+    $modules[] = 'devel';
+    $modules[] = 'coder';
+
+    foreach ($modules as $modules_name) {
+      if (module_exists($modules_name))
+        $result = 0;
+      else
+        $result = 1;
+
+      print "Test module disabled: {$result} [$modules_name] \n";
+      $this->assertEquals(FALSE, module_exists($modules_name));
+    }
+  }
+
+}

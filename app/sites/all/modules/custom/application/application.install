@@ -1,0 +1,60 @@
+<?php
+
+function _application_t() {
+  t('Execute');
+  t('- Choose an operation -');
+  t('Choose an operation');
+  t('Delete item');
+  t('Modify entity values');
+}
+
+/**
+ * Implements hook_install().
+ */
+function application_install() {
+  // Enable modules.
+  $module_list = array(
+    'node',
+    'layout',
+  );
+  module_enable($module_list);
+  module_list(TRUE, FALSE);
+  // Flush caches.
+  drupal_flush_all_caches();
+
+  // Update translations.
+  application_api_update_translations();
+
+  variable_set('date_default_timezone', 'Europe/Berlin');
+  variable_set('site_frontpage', 'frontpage');
+
+  application_api_features_revert(application_features_list());
+  // Flush caches.
+  drupal_flush_all_caches();
+  application_api_features_revert(application_features_list());
+
+  // Url aliases.
+  $path = array('source' => 'user/register', 'alias' => 'rejestracja', 'language' => 'pl');
+  path_save($path);
+
+  $path = array('source' => 'user/register', 'alias' => 'create-account', 'language' => 'en');
+  path_save($path);
+
+  variable_set('language_default', (object) array(
+    'language' => 'pl',
+    'name' => 'Polish',
+    'native' => 'Polski',
+    'direction' => '0',
+    'enabled' => '1',
+    'plurals' => '3',
+    'formula' => '(($n==1)?(0):((((($n%10)>=2)&&(($n%10)<=4))&&((($n%100)<10)||(($n%100)>=20)))?(1):2))',
+    'domain' => '',
+    'prefix' => '',
+    'weight' => '0',
+    'javascript' => '',
+  ));
+
+  $theme_settings = variable_get('theme_settings');
+  $theme_settings['toggle_main_menu'] = 0;
+  variable_set('theme_settings', $theme_settings);
+}

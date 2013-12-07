@@ -1,0 +1,26 @@
+# Ignore configuration files that may contain sensitive information.
+app/sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+app/sites/*/files
+app/sites/*/private
+
+# Ignore eclipse settings files
+/.settings
+/.project
+/.buildpath
+
+# Ignore local installation config files
+conf/local/*
+!conf/local/README.txt
+
+# Ignore local installation config files
+docs/local/*
+!docs/local/README.txt
+
+# Ignore logs
+conf/build/logs/*
+!conf/build/logs/README.txt
+
+app/FirePHPCore
+app/FirePHPCore/*
