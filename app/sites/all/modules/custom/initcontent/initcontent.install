@@ -8,6 +8,30 @@ function initcontent_install() {
     $params = array('username' => 'user' . $i);
     initcontent_add_user($params);
   }
+
+  $title = 'Important Dates';
+  $body = <<<EOS
+
+<table style="border: 1px solid black;">
+  <tr>
+    <td class="date">08.12.2013 - 09.03.2014 </td>
+    <td class="description">Call for papers. </td>
+  </tr>
+  <tr>
+    <td class="date">10.03.2014-13.04.2014 </td>
+    <td class="description">Voting for sessions.</td>
+  </tr>
+  <tr>
+    <td class="date">17-18.05.2014 </td>
+    <td class="description">DrupalCamp Wroclaw</td>
+  </tr>
+
+</table>
+
+EOS;
+
+  initcontent_add_page($title, $body, TRUE);
+
 }
 
 /**
@@ -27,3 +51,59 @@ function initcontent_add_user($params) {
   $account = user_save('', $userinfo);
   return $account;
 }
+
+/**
+ * Add menu link item.
+ */
+function initconent_add_menu_link($menu_params) {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $form_state = array(
+    'values' => array(
+      'menu_name' => isset($menu_params['menu_name']) ? $menu_params['menu_name'] : 'main-menu',
+      'weight' =>  isset($menu_params['weight']) ? $menu_params['weight'] :'1',
+      'link_title' => isset($menu_params['link_title']) ? $menu_params['link_title'] : 'Link title',
+      'link_path' => isset($menu_params['link_path']) ? $menu_params['link_path'] : '<front>',
+      'module' => 'menu',
+      'mlid' => isset($menu_params['mlid']) ? $menu_params['mlid'] : 0,
+      'plid' => isset($menu_params['plid']) ? $menu_params['plid'] : 0,
+    ),
+  );
+  // Validate and transform the item, so it conforms with Drupal standards.
+  menu_edit_item_validate(array(), $form_state);
+  // Save the item to database.
+  menu_link_save($form_state['values']);
+}
+
+/**
+ * Create node Page.
+ */
+function initcontent_add_page($title, $body, $add_menu_item = FALSE, $menu_params = array()) {
+  $type = 'page';
+  $uid = 1;
+
+  $node = new stdClass();
+  $node->type = $type;
+  $node->uid = $uid;
+  $node->status = 1;
+  $node->commment = 0;
+  $node->promote = 0;
+  $node->sticky = 0;
+  $node->is_new = TRUE;
+  node_object_prepare($node);
+
+  $node->title = $title;
+  $node->body[LANGUAGE_NONE][0]['value'] = $body;
+  $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
+  $node->uid = 1;
+  node_save($node);
+
+  if ($add_menu_item) {
+    $menu_params['link_path'] = 'node/' . $node->nid;
+    $menu_params['link_title'] = $title;
+    initconent_add_menu_link($menu_params);
+  }
+
+  return $node;
+}
+
+
