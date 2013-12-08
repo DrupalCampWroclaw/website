@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * Code for the frontpage module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function frontpage_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#frontpage':
+      $output = '';
+      $output .= '<p>' . t('Frontpage module') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function frontpage_menu() {
+  $items['frontpage'] = array(
+    'title' => 'Front page',
+    'page callback' => 'frontpage_main_page',
+    'access callback' => TRUE,
+    'file' => 'frontpage.pages.inc',
+  );
+  return $items;
+}
