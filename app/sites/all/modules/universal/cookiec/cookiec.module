@@ -1,0 +1,137 @@
+<?php
+/**
+ * @file
+ * This module intends to deal with the EU Directive on Privacy and Electronic
+ * Communications that comes into effect in the UK on 26th May 2012.
+ *
+ * Author: Marcin Pajdzik
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function cookiec_menu() {
+  $items['cookiec'] = array(
+    //'title' => '',
+    'description' => 'Cookie policy page.',
+    'page callback' => 'cookiec_policy_page',
+    'access arguments' => array('access content'),
+    'file' => 'cookiec.page.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_init().
+ */
+function cookiec_init() {
+  global $language;
+  $popup_settings = cookiec_get_settings();
+
+  // Not using this usually.
+  if (isset($popup_settings['eu_only']) && $popup_settings['eu_only'] && module_exists('geoip')) {
+    $geoip_match = false;
+    if ( in_array(geoip_country_code(), array('BE', 'BG', 'CZ', 'DK', 'DE', 'EE', 'IE', 'EL', 'ES', 'FR', 'IT', 'CY', 'LV', 'UK', 'LT', 'LU', 'HU', 'MT', 'NL', 'AT', 'PL', 'PT', 'RO', 'SI', 'SK', 'FI', 'SE'))) {
+      $geoip_match = true;
+    }
+  } else {
+    $geoip_match = true;
+  }
+
+  //
+  if (!empty($popup_settings['popup_enabled']) && user_access('access content') && $geoip_match) {
+
+    drupal_add_css(drupal_get_path('module', 'cookiec') . '/css/cookiec.css');
+
+    $popup_text_info = str_replace(array("\r", "\n"), '', $popup_settings['popup_info']['value']);
+    $popup_text_agreed = str_replace(array("\r", "\n"), '', $popup_settings['popup_agreed']['value']);
+
+    $html_info = theme('cookiec_popup_info', array('message' => $popup_text_info));
+    $html_agreed = theme('cookiec_popup_agreed', array('message' => $popup_text_agreed));
+    $variables = array(
+      'popup_enabled' => $popup_settings['popup_enabled'],
+      'popup_agreed_enabled' => $popup_settings['popup_agreed_enabled'],
+      'popup_hide_agreed' => isset($popup_settings['popup_hide_agreed']) ? $popup_settings['popup_hide_agreed'] : FALSE,
+      'popup_html_info' => empty($html_info) ? FALSE : $html_info,
+      'popup_html_agreed' => empty($html_agreed) ? FALSE : $html_agreed,
+      'popup_height' => 'auto',
+      'popup_width' => (drupal_substr($popup_settings['popup_width'], -1) == '%') ? $popup_settings['popup_width'] : (int) $popup_settings['popup_width'],
+      'popup_delay' => (int) ($popup_settings['popup_delay'] * 1000),
+      'popup_link' => url($popup_settings['popup_link']),
+      'popup_position' => $popup_settings['popup_position'],
+      'popup_language' => cookiec_get_langcode($language),
+    );
+
+    drupal_add_js(array('cookiec' => $variables), array('type' => 'setting', 'scope' => 'footer'));
+    drupal_add_js(drupal_get_path('module', 'cookiec') . '/js/cookiec.js', array('type' => 'file', 'scope' => 'footer'));
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function cookiec_permission() {
+  return array(
+    'administer cookiec' => array(
+      'title' => 'Administer CookieC'
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cookiec_theme() {
+  $path = drupal_get_path('module', 'cookiec') . '/theme';
+  return array(
+    'cookiec_popup_info' => array(
+      'template' => 'cookiec-info',
+      'variables' => array('message' => NULL),
+      'path' => $path,
+    ),
+    'cookiec_popup_agreed' => array(
+      'template' => 'cookiec-agreed',
+      'variables' => array('message' => NULL),
+      'path' => $path,
+    ),
+  );
+}
+
+/**
+ *
+ * Retrieves settings from the database for a current language.
+ *
+ * @global type $language
+ * @param type $setting
+ * @return type
+ */
+
+function cookiec_get_settings($setting = 'all') {
+  global $language;
+
+  $langcode = cookiec_get_langcode($language);
+
+  module_load_include('inc', 'cookiec', 'cookiec.page');
+
+  $regional_function = 'cookiec_policy_settings_' . $langcode;
+  if(function_exists ($regional_function)) {
+    $settings = $regional_function($langcode);
+  }
+  else{
+    $settings = cookiec_policy_settings_en($langcode);
+  }
+
+  return $settings;
+}
+
+/**
+ * Returns language in which cookie info should be displayed.
+ */
+function cookiec_get_langcode($language) {
+  global $language;
+  $langcode = $language->language;
+
+  drupal_alter('cookiec_langcode', $langcode);
+
+  return $langcode;
+}
