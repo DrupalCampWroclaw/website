@@ -4,6 +4,9 @@ echo "Post-build script start"
 # Add custom code here
 # for example: enable initcontent module
 
+echo "drush fra"
+drush -r $PARAM_PROJECT_PATH_APP fra -y
+
 echo "drush en file_redirect"
 drush -r $PARAM_PROJECT_PATH_APP en file_redirect -y
 drush -r $PARAM_PROJECT_PATH_APP php-eval "variable_set('file_redirect_production_host', 'http://www.drupalcampwroclaw.pl');"
