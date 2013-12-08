@@ -49,7 +49,7 @@ function application_strongarm() {
     'toggle_node_user_picture' => 1,
     'toggle_comment_user_picture' => 1,
     'toggle_favicon' => 1,
-    'toggle_main_menu' => 0,
+    'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
     'default_logo' => 1,
     'logo_path' => '',
