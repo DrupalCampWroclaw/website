@@ -4,11 +4,23 @@
  * Implemments hook_install().
  */
 function initcontent_install() {
+  // Create users.
   for ($i = 1; $i <= 10; $i++) {
     $params = array('username' => 'user' . $i);
     initcontent_add_user($params);
   }
 
+
+
+  // Add menu link home.
+  $menu_params = array(
+    'link_title' => 'Home',
+    'weight' => -50,
+  );
+  initconent_add_menu_link($menu_params);
+
+  // Create pages.
+  $weight = 5;
   $title = 'Important Dates';
   $body = <<<EOS
 
@@ -29,8 +41,47 @@ function initcontent_install() {
 </table>
 
 EOS;
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
 
-  initcontent_add_page($title, $body, TRUE);
+  // Add page.
+  $title = 'Speakers';
+  $body = <<<EOS
+Speakers
+EOS;
+
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+
+    // Add page.
+  $title = 'Sessions';
+  $body = <<<EOS
+Sessions
+EOS;
+
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+
+  // Add page.
+  $title = 'Attendees';
+  $body = <<<EOS
+Attendees
+EOS;
+
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+
+  // Add page.
+  $title = 'Sponsors';
+  $body = <<<EOS
+Sponsors
+EOS;
+
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+
+    // Add page.
+  $title = 'Wroclaw';
+  $body = <<<EOS
+Informations about Wroclaw
+EOS;
+
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
 
 }
 
