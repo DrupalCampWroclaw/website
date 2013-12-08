@@ -1,0 +1,23 @@
+name = Page
+description = Page
+core = 7.x
+package = APP
+version = 7.x-1.0-beta1
+project = page
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = text
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_instance][] = node-page-body
+features[node][] = page
+features[variable][] = language_content_type_page
+features[variable][] = menu_options_page
+features[variable][] = menu_parent_page
+features[variable][] = node_options_page
+features[variable][] = node_preview_page
+features[variable][] = node_submitted_page
+project status url = http://updates-drupal.drupalcampwroclaw.pl/release-history
+
