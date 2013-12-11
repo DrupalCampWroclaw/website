@@ -6,6 +6,7 @@ $grey1: #ececec;
 $blue1: #0c6291;
 $orange1: #ff9e15;
 $red1: #e04f3c;
+$max-page-width: 1200px;
 
 /**
  * Styles.
@@ -19,6 +20,18 @@ a,
 a:link,
 a:visited {
   color: $blue1;
+}
+
+#main,
+#header {
+  max-width: $max-page-width;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#header-over {
+
 }
 
 #site-name{

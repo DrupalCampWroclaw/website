@@ -1795,29 +1795,37 @@ tr.selected td {
 /**
  * Styles.
  */
-/* line 13, ../sass/components/_fresh.scss */
+/* line 14, ../sass/components/_fresh.scss */
 body {
   background: #ececec;
   font-family: 'Droid Sans', sans-serif;
 }
 
-/* line 20, ../sass/components/_fresh.scss */
+/* line 21, ../sass/components/_fresh.scss */
 a,
 a:link,
 a:visited {
   color: #0c6291;
 }
 
-/* line 24, ../sass/components/_fresh.scss */
+/* line 26, ../sass/components/_fresh.scss */
+#main,
+#header {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 37, ../sass/components/_fresh.scss */
 #site-name {
   padding: 0.25em 1em;
 }
 
-/* line 28, ../sass/components/_fresh.scss */
+/* line 41, ../sass/components/_fresh.scss */
 #navigation {
   padding: 0.5em 0;
 }
-/* line 31, ../sass/components/_fresh.scss */
+/* line 44, ../sass/components/_fresh.scss */
 #navigation ul.links li {
   background: transparent;
   font-size: 1.2em;
@@ -1826,37 +1834,37 @@ a:visited {
   text-align: center;
   padding: 0;
 }
-/* line 35, ../sass/components/_fresh.scss */
+/* line 48, ../sass/components/_fresh.scss */
 #navigation ul.links li a {
   display: block;
   padding: 0.25em 0.5em;
 }
-/* line 44, ../sass/components/_fresh.scss */
+/* line 57, ../sass/components/_fresh.scss */
 #navigation ul.links li:hover {
   background: #ff9e15;
 }
-/* line 46, ../sass/components/_fresh.scss */
+/* line 59, ../sass/components/_fresh.scss */
 #navigation ul.links li:hover a {
   color: white;
 }
-/* line 50, ../sass/components/_fresh.scss */
+/* line 63, ../sass/components/_fresh.scss */
 #navigation ul.links li.active {
   background: #e04f3c;
 }
-/* line 52, ../sass/components/_fresh.scss */
+/* line 65, ../sass/components/_fresh.scss */
 #navigation ul.links li.active a {
   color: white;
 }
-/* line 57, ../sass/components/_fresh.scss */
+/* line 70, ../sass/components/_fresh.scss */
 #navigation a {
   text-decoration: none;
 }
 
-/* line 63, ../sass/components/_fresh.scss */
+/* line 76, ../sass/components/_fresh.scss */
 table {
   width: 100%;
 }
-/* line 65, ../sass/components/_fresh.scss */
+/* line 78, ../sass/components/_fresh.scss */
 table th {
   background-color: #f0f0f0;
   border-color: #d9d9d9;
@@ -1866,7 +1874,7 @@ table th {
   vertical-align: top;
   font-weight: bold;
 }
-/* line 76, ../sass/components/_fresh.scss */
+/* line 89, ../sass/components/_fresh.scss */
 table tr td {
   border-right: 1px solid #ff9e15;
   border-bottom: 1px solid #ff9e15;
@@ -1876,24 +1884,24 @@ table tr td {
   border: 1px solid #e5e5e5;
   vertical-align: top;
 }
-/* line 89, ../sass/components/_fresh.scss */
+/* line 102, ../sass/components/_fresh.scss */
 table tr.even,
 table tr.odd {
   background-color: #eee;
   border-bottom: 1px solid #ccc;
   padding: 0.1em 0.6em;
 }
-/* line 94, ../sass/components/_fresh.scss */
+/* line 107, ../sass/components/_fresh.scss */
 table tr.odd td {
   background-color: #f7f7f7;
 }
-/* line 98, ../sass/components/_fresh.scss */
+/* line 111, ../sass/components/_fresh.scss */
 table tr.odd:hover td,
 table tr:hover td {
   background-color: #fcf1ed;
 }
 
-/* line 103, ../sass/components/_fresh.scss */
+/* line 116, ../sass/components/_fresh.scss */
 #page-title {
   color: #e04f3c;
 }

@@ -8,8 +8,8 @@
  */
 ?>
 
-<div id="page">
-
+<div id="page-all">
+<div id="header-over">
   <header class="header" id="header" role="banner">
 
     <?php if ($logo): ?>
@@ -49,7 +49,8 @@
     <?php print render($page['header']); ?>
 
   </header>
-
+</div>
+<div id="main-over">
   <div id="main">
 
     <div id="content" class="column" role="main">
@@ -112,7 +113,7 @@
     <?php endif; ?>
 
   </div>
-
+</div>
   <?php print render($page['footer']); ?>
 
 </div>
