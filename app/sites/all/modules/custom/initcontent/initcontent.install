@@ -19,6 +19,14 @@ function initcontent_install() {
   );
   initconent_add_menu_link($menu_params);
 
+  // Add menu link home.
+  $menu_params = array(
+    'link_title' => 'Contact',
+    'weight' => 50,
+    'link_path' => 'contact',
+  );
+  initconent_add_menu_link($menu_params);
+
   // Create pages.
   $weight = 5;
   $title = 'Important Dates';
@@ -26,15 +34,19 @@ function initcontent_install() {
 
 <table style="border: 1px solid black;">
   <tr>
+    <th class="date">Date</th>
+    <th class="description">Description</th>
+  </tr>
+  <tr class="even">
     <td class="date">08.12.2013 - 09.03.2014 </td>
     <td class="description">Call for papers. </td>
   </tr>
-  <tr>
-    <td class="date">10.03.2014-13.04.2014 </td>
+  <tr class="odd">
+    <td class="date">10.03.2014 - 13.04.2014 </td>
     <td class="description">Voting for sessions.</td>
   </tr>
-  <tr>
-    <td class="date">17-18.05.2014 </td>
+  <tr class="even">
+    <td class="date">17 - 18.05.2014 </td>
     <td class="description">DrupalCamp Wroclaw</td>
   </tr>
 
@@ -44,45 +56,57 @@ EOS;
   initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
 
   // Add page.
-  $title = 'Speakers';
+/*  $title = 'Speakers';
   $body = <<<EOS
 Speakers
 EOS;
-
   initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
-
+*/
     // Add page.
   $title = 'Sessions';
   $body = <<<EOS
-Sessions
-EOS;
+<h2>Call for papers</h2>
 
+<ul>
+  <li>The deadline for online submission is 9 march 2014.</li>
+  <li>Authors may submit up to 3 sessions.</li>
+  <li>Please send session title, short description, language (english or polish) and information about special requirements</li>
+  <li>Submit your session to e-mail <a href="mailto:info@drupalcampwroclaw.pl">info@drupalcampwroclaw.pl</a> or by <a href="/contact">contact form</a></li>
+</ul>
+
+EOS;
   initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
 
   // Add page.
-  $title = 'Attendees';
+/*  $title = 'Attendees';
   $body = <<<EOS
 Attendees
 EOS;
 
-  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));*/
 
   // Add page.
   $title = 'Sponsors';
   $body = <<<EOS
-Sponsors
-EOS;
+<p>With our proposal we would like to encourage you to help with organization of the third conference in Poland devoted to CMS Drupal. We believe that the event will attract many experts,at the same time allowing you to promote your own business. <a href="http://www.drupalcampwroclaw.pl/downloadfiles/sponsorship_offer.pdf">Click here to download Sponsorship offer in PDF</a></p>
 
+<p>&nbsp;</p>
+<h2>Sponsor packages</h2>
+<p style="text-align:center"><a href="http://www.drupalcampwroclaw.pl/downloadfiles/sponsorship_offer.pdf"><img src="/downloadfiles/sponsor_packages.png" alt="" /></a></p>
+
+EOS;
   initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
 
     // Add page.
-  $title = 'Wroclaw';
+/*  $title = 'Wroclaw';
   $body = <<<EOS
 Informations about Wroclaw
 EOS;
 
-  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));*/
 
+
+  initcontent_create_content_bannersliders();
 }
 
 /**
@@ -158,3 +182,48 @@ function initcontent_add_page($title, $body, $add_menu_item = FALSE, $menu_param
 }
 
 
+/**
+ * Save nodes - Offer Links.
+ */
+function initcontent_create_content_bannersliders() {
+  // Banner
+  $params = array(
+    'title' => 'DrupalCamp Wrocław',
+    'text' => 'DrupalCamp Wrocław',
+    'filename' => 'bannerslider1.png',
+    'link' => 'contact',
+    'weight' => 1,
+    );
+  initcontent_create_content_bannerslider_node($params);
+}
+
+
+/**
+ * Save one node - bannerslider.
+ */
+function initcontent_create_content_bannerslider_node($params) {
+  $e = entity_create('node', array('type' => 'bannerslider'));
+
+  // Create a Entity Wrapper of that new Entity.
+  $e = entity_metadata_wrapper('node', $e);
+  // Set other properties which go after. (Title and fields).
+  $e->title = $params['title'];
+  $e->field_bannerslider_text = $params['text'];
+  $e->field_bannerslider_link = $params['link'];
+
+  $e->field_bannerslider_weight = $params['weight'];
+  // The images
+  $path = drupal_get_path('module', 'initcontent') . '/content/images/';
+  $filename = $params['filename'];
+  $file_temp = file_get_contents($path . $filename);
+
+  // Our colorbox settings require this.
+  //$file_temp['alt'] = $data['display_node']->title->value();
+  //$file_temp['title'] = $data['display_node']->title->value();
+  $file_temp = file_save_data($file_temp, 'public://' . $filename, FILE_EXISTS_RENAME);
+
+  $e->field_bannerslider_image = (array)$file_temp;
+  $e->save();
+  $node = $e->value();
+  return $node;
+}

@@ -21,7 +21,7 @@ function frontpage_help($path, $arg) {
  */
 function frontpage_menu() {
   $items['frontpage'] = array(
-    'title' => 'Front page',
+    'title' => '',
     'page callback' => 'frontpage_main_page',
     'access callback' => TRUE,
     'file' => 'frontpage.pages.inc',

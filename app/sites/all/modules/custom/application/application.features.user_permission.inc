@@ -102,6 +102,23 @@ function application_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'access site-wide contact form'.
+  $permissions['access site-wide contact form'] = array(
+    'name' => 'access site-wide contact form',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'contact',
+  );
+
+  // Exported permission: 'access user contact forms'.
+  $permissions['access user contact forms'] = array(
+    'name' => 'access user contact forms',
+    'roles' => array(),
+    'module' => 'contact',
+  );
+
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
@@ -109,6 +126,13 @@ function application_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer CAPTCHA settings'.
+  $permissions['administer CAPTCHA settings'] = array(
+    'name' => 'administer CAPTCHA settings',
+    'roles' => array(),
+    'module' => 'captcha',
   );
 
   // Exported permission: 'administer actions'.
@@ -145,6 +169,13 @@ function application_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'administer contact forms'.
+  $permissions['administer contact forms'] = array(
+    'name' => 'administer contact forms',
+    'roles' => array(),
+    'module' => 'contact',
   );
 
   // Exported permission: 'administer content translations'.
@@ -805,6 +836,13 @@ function application_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'services',
+  );
+
+  // Exported permission: 'skip CAPTCHA'.
+  $permissions['skip CAPTCHA'] = array(
+    'name' => 'skip CAPTCHA',
+    'roles' => array(),
+    'module' => 'captcha',
   );
 
   // Exported permission: 'translate admin strings'.

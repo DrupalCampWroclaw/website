@@ -16,6 +16,7 @@ function application_install() {
   $module_list = array(
     'node',
     'layout',
+    'backup_migrate',
   );
   module_enable($module_list);
   module_list(TRUE, FALSE);

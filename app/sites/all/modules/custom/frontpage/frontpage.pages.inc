@@ -11,14 +11,14 @@
  *   HTML output.
  */
 function frontpage_main_page() {
-  $output = '';
+  $output = ' ';
 
-  if (user_is_logged_in()) {
+  /*if (user_is_logged_in()) {
     $output .= frontpage_main_page_logged_in();
   }
   else {
     $output .= frontpage_main_page_anonymous();
-  }
+  }*/
   return $output;
 }
 

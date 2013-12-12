@@ -5,3 +5,18 @@
  */
 
 include_once 'layout.features.inc';
+
+
+/**
+ * Implements hook_init().
+ */
+function layout_init() {
+  $nodes_redirect = array('bannerslider');
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == '' ) {
+    $node = node_load(arg(1));
+    if (in_array($node->type, $nodes_redirect) && !user_access('administer application')) {
+      drupal_goto('<front>', array(), 301);
+    }
+  }
+
+}
