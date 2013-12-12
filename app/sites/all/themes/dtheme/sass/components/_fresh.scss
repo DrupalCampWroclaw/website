@@ -116,3 +116,13 @@ table {
 #page-title{
   color: $red1;
 }
+
+.view-bannerslider{
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      display: block;
+    }
+  }
+}

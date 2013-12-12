@@ -1906,6 +1906,16 @@ table tr:hover td {
   color: #e04f3c;
 }
 
+/* line 121, ../sass/components/_fresh.scss */
+.view-bannerslider ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 124, ../sass/components/_fresh.scss */
+.view-bannerslider ul li {
+  display: block;
+}
+
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */
