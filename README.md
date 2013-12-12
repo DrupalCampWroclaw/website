@@ -17,6 +17,6 @@ Używamy Zen Grids http://zengrids.com/
 
 Jeśli chcesz pomóc w rozwoju strony i otrzymać uprawnienia do repozytorium GIT pisz na adres info@drupalcampwroclaw.pl lub w https://github.com/DrupalCampWroclaw/website/issues
 
-Sprawy organizacyjne konferencji: https://github.com/DrupalCampWroclaw/organizacyjne
+Sprawy organizacyjne konferencji: https://github.com/DrupalCampWroclaw/organizacyjne/issues
 
 Organizatorzy konferencji: https://github.com/DrupalCampWroclaw?tab=members
