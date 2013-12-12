@@ -9,7 +9,7 @@ dependencies[] = bannerslider
 dependencies[] = block
 dependencies[] = captcha
 dependencies[] = ckeditor
-dependencies[] = contact
+
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = cookiec
