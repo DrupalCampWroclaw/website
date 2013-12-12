@@ -3,7 +3,7 @@ website DrupalCamp Wrocław
 
 Strona internetowa  DrupalCamp Wrocław.
 
-Strona konferencjie www.drupalcampwroclaw.pl
+Strona konferencji www.drupalcampwroclaw.pl
 
 Zmiany w repo wprowadzamy w branchu "develop", zgodnie z git flow
 - https://github.com/nvie/gitflow
