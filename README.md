@@ -20,16 +20,3 @@ Jeśli chcesz pomóc w rozwoju strony i otrzymać uprawnienia do repozytorium GI
 Sprawy organizacyjne konferencji: https://github.com/DrupalCampWroclaw/organizacyjne/issues
 
 Organizatorzy konferencji: https://github.com/DrupalCampWroclaw?tab=members
-
-----------------------------
-
-Jak pracować nad stroną:
-- skrypty działają tylko pod systemem Linux
-- instalujesz Drush
-- pobierasz repo (git clone)
-- ustawiasz sobie vhosta na lokalnym komputerze np www.drupalcampwroclaw.local
-- dodajesz wpisz w /etc/hosts
-- tworzysz bazę danych
-- do katalogu /conf/local kopiujesz pliki z /conf/template
-- konfigurujesz pliki w /conf/local - podajesz parametry swojego lokalnego srodowiska
-- wklepujesz w konsoli komendę do builda jak w https://github.com/DrupalCampWroclaw/website/blob/develop/docs/developer-info.txt (tylko zmieniasz ścieżkę).
