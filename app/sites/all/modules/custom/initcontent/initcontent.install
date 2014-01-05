@@ -106,7 +106,7 @@ EOS;
   initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));*/
 
 
-  initcontent_create_content_bannersliders();
+  //initcontent_create_content_bannersliders();
 }
 
 /**

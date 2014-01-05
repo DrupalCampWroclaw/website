@@ -27,7 +27,7 @@ function application_install() {
   application_api_update_translations();
 
   variable_set('date_default_timezone', 'Europe/Berlin');
-  variable_set('site_frontpage', 'frontpage');
+  variable_set('site_frontpage', 'main');
 
   application_api_features_revert(application_features_list());
   // Flush caches.

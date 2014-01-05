@@ -302,8 +302,24 @@ table {
   padding-top: 1em;
   #content{
     background: $bg1;
+    min-height: 30em;
+    h1.title {
+      text-transform: uppercase;
+    }
   }
+}
+
+#main,
+#footer {
   .block {
     background: $bg1;
+    h2.block-title {
+      color: $red1;
+      text-transform: uppercase;
+    }
   }
+}
+
+#footer{
+  margin-top: 1em;
 }
