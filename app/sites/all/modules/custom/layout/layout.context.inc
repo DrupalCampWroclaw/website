@@ -55,7 +55,24 @@ function layout_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'superfish-1' => array(
+          'module' => 'superfish',
+          'delta' => '1',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
+        'views-sponsors_diamond_block-block' => array(
+          'module' => 'views',
+          'delta' => 'sponsors_diamond_block-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables

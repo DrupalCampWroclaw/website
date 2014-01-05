@@ -18,5 +18,5 @@ function layout_init() {
       drupal_goto('<front>', array(), 301);
     }
   }
-
 }
+
