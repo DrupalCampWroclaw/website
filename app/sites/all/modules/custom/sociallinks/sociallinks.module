@@ -25,7 +25,32 @@ function sociallinks_help($path, $arg) {
 function sociallinks_header_bar() {
   $output = '';
 
-  $output .= 'TODO - sociallinks.module';
+  $menu_links = array();
+
+  $menu_links[] = array(
+    'href' =>  'https://www.facebook.com/drupalcampwroclawpl',
+    'title' => t('Facebook'),
+    'attributes' => array('class' => 'facebook', 'target' => '_blank'),
+  );
+  $menu_links[] = array(
+    'href' =>  'https://twitter.com/drupalcamp_wroc',
+    'title' => t('Twitter'),
+    'attributes' => array('class' => 'twitter', 'target' => '_blank'),
+  );
+  $menu_links[] = array(
+    'href' =>  'https://plus.google.com/+DrupalcampwroclawPl',
+    'title' => t('Google Plus'),
+    'attributes' => array('class' => 'gplus', 'target' => '_blank'),
+  );
+  $menu_links[] = array(
+    'href' =>  'rss.xml',
+    'title' => t('RSS'),
+    'attributes' => array('class' => 'rss', 'target' => '_blank'),
+  );
+
+  $output .= theme('links',  array(
+                'links' => $menu_links,
+                'attributes' => array('class' => array('social-links'))));
 
   return $output;
 }

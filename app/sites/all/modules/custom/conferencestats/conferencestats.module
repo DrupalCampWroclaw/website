@@ -24,8 +24,59 @@ function conferencestats_help($path, $arg) {
  */
 function conferencestats_header_bar() {
   $output = '';
+  $attendees = conferencestats_get_attendees_count();
+  $days_left = conferencestats_get_day_left();
+  $sessions = conferencestats_get_sessions_count();
 
-  $output .= 'TODO - conferencestats.module';
+  $output .= '<div>' . t('Attendees') . ': <span>' . $attendees . '</span></div>';
+  if ($days_left) {
+    $output .= '<div>' . t('Time left') . ': <span>' . $days_left . '</span> ' . t('days') . '</div>';
+  }
+  $output .= '<div>' . t('Sessions') . ': <span>' . $sessions . '</span></div>';
 
   return $output;
+}
+
+/**
+ * Get number of attendees.
+ */
+function conferencestats_get_attendees_count() {
+  $query = db_select('users', 'u');
+  $query->fields('u');
+  $query->condition('uid', '1', '>');
+  $query->condition('status', '1');
+  $result = $query->execute();
+  return sprintf("%02s", $result->rowCount());
+}
+
+/**
+ * Get days left.
+ */
+function conferencestats_get_day_left() {
+  $today = date('m/d/Y');
+  $today = strtotime($today);
+  $finish = '2014-05-16';
+  $finish = strtotime($finish);
+
+  $diff = $finish - $today;
+  if ($diff > 0) {
+    $daysleft = floor($diff/(60*60*24));
+  }
+  else {
+    $daysleft = NULL;
+  }
+  return $daysleft;
+}
+
+/**
+ * Get number of sessions.
+ * @TODO - only accepted sessions.
+ */
+function conferencestats_get_sessions_count() {
+  $query = db_select('node', 'n');
+  $query->fields('n');
+  $query->condition('type', 'session');
+  $query->condition('status', '1');
+  $result = $query->execute();
+  return sprintf("%02s", $result->rowCount());
 }
