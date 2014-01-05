@@ -10,8 +10,28 @@
 
 <div id="page-all">
 <div id="header-over">
-  <header class="header" id="header" role="banner">
 
+  <div id="header-bar" class="clearfix">
+
+    <div id="header-bar-center">
+
+     <div id="header-bar-left">
+     </div>
+      <div id="header-bar-center-text" class="clearfix">
+        <div id="conference-statistics"><?php print $confstats; ?></div>
+        <div id="user-links"><?php print $userlinks; ?></div>
+        <div id="social-links" ><?php print $sociallinks; ?></div>
+      </div>
+
+      <div id="header-bar-right">
+      </div>
+
+    </div>
+
+  </div>
+
+  <header class="header" id="header" role="banner">
+<?php /*
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
@@ -47,7 +67,7 @@
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
-
+*/ ?>
   </header>
 </div>
 <div id="main-over">

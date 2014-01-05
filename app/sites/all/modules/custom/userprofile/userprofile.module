@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Code for the UserProfile feature.
+ */
+
+include_once 'userprofile.features.inc';
+
+
+/**
+ * Social links in header of page.
+ *
+ * @return
+ *   HTML output.
+ */
+function userprofile_header_bar() {
+  $output = '';
+
+  $output .= 'TODO - userprofile.module';
+
+  return $output;
+}

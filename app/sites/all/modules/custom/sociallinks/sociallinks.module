@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function sociallinks_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#sociallinks':
+      $output = '';
+      $output .= '<p>' . t('Social links') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Social links in header of page.
+ *
+ * @return
+ *   HTML output.
+ */
+function sociallinks_header_bar() {
+  $output = '';
+
+  $output .= 'TODO - sociallinks.module';
+
+  return $output;
+}

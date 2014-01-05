@@ -1,0 +1,12 @@
+name = UserProfile
+description = User profile
+core = 7.x
+package = APP
+version = 7.x-1.0-beta1
+project = userprofile
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = site_default_country
+project status url = http://updates-drupal.drupalcampwroclaw.pl/release-history

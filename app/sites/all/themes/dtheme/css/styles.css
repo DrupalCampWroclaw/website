@@ -1797,7 +1797,7 @@ tr.selected td {
  */
 /* line 14, ../sass/components/_fresh.scss */
 body {
-  background: #ececec;
+  background: url(../images/body-bg1.png);
   font-family: 'Droid Sans', sans-serif;
 }
 
@@ -1914,6 +1914,147 @@ table tr:hover td {
 /* line 124, ../sass/components/_fresh.scss */
 .view-bannerslider ul li {
   display: block;
+}
+
+/* line 130, ../sass/components/_fresh.scss */
+#admin-menu-icon img {
+  width: 15px;
+  height: 15px;
+}
+
+/** ---------------------------------  */
+@media all and (max-width: 480px) {
+  /* line 137, ../sass/components/_fresh.scss */
+  #header-over {
+    height: 301px;
+    background: url(../images/header-bg1.png) repeat-x;
+  }
+}
+@media all and (min-width: 960px) {
+  /* line 137, ../sass/components/_fresh.scss */
+  #header-over {
+    height: 301px;
+    background: url(../images/header-bg1.png) repeat-x;
+  }
+}
+
+/* line 152, ../sass/components/_fresh.scss */
+#header-bar {
+  background: url("../images/header-bar-center1.png") repeat-x;
+  overflow: hidden;
+  color: white;
+  position: relative;
+}
+/* line 157, ../sass/components/_fresh.scss */
+#header-bar a {
+  color: white;
+}
+/* line 162, ../sass/components/_fresh.scss */
+#header-bar #header-bar-center {
+  height: 67px;
+}
+/* line 165, ../sass/components/_fresh.scss */
+#header-bar #header-bar-left {
+  background: url("../images/header-bar-left1.png") repeat-x;
+  height: 67px;
+  width: 60px;
+}
+/* line 170, ../sass/components/_fresh.scss */
+#header-bar #header-bar-right {
+  background: url("../images/header-bar-right1.png") repeat-x;
+  height: 67px;
+  width: 60px;
+}
+/* line 176, ../sass/components/_fresh.scss */
+#header-bar #header-bar-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+/* line 182, ../sass/components/_fresh.scss */
+#header-bar #header-bar-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+/* line 188, ../sass/components/_fresh.scss */
+#header-bar #header-bar-center-text {
+  padding: 0 67px;
+}
+@media all and (max-width: 480px) {
+  /* line 152, ../sass/components/_fresh.scss */
+  #header-bar {
+    background: url("../images/header-bar-center2.png") repeat-x;
+  }
+  /* line 194, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-center {
+    height: 134px;
+  }
+  /* line 197, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-left {
+    background: url("../images/header-bar-left2.png") repeat-x;
+    height: 134px;
+    width: 60px;
+  }
+  /* line 202, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-right {
+    background: url("../images/header-bar-right2.png") repeat-x;
+    height: 134px;
+    width: 60px;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 959px) {
+  /* line 152, ../sass/components/_fresh.scss */
+  #header-bar {
+    background: url("../images/header-bar-center3.png") repeat-x;
+  }
+  /* line 211, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-center {
+    height: 100px;
+  }
+  /* line 214, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-left {
+    background: url("../images/header-bar-left3.png") repeat-x;
+    height: 100px;
+  }
+  /* line 219, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-right {
+    background: url("../images/header-bar-right3.png") repeat-x;
+    height: 100px;
+  }
+}
+@media all and (min-width: 960px) {
+  /* line 152, ../sass/components/_fresh.scss */
+  #header-bar {
+    max-width: 1289px;
+    margin: auto;
+  }
+}
+
+@media all and (min-width: 960px) {
+  /* line 248, ../sass/components/_fresh.scss */
+  #header-bar-center #conference-statistics {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 251, ../sass/components/_fresh.scss */
+  #header-bar-center #user-links {
+    float: left;
+    width: 33.33333%;
+    margin-left: 33.33333%;
+    margin-right: -66.66667%;
+  }
+  /* line 254, ../sass/components/_fresh.scss */
+  #header-bar-center #social-links {
+    float: left;
+    width: 33.33333%;
+    margin-left: 66.66667%;
+    margin-right: -100%;
+  }
 }
 
 /* SMACSS theme rules */

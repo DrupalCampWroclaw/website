@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function conferencestats_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#conferencestats':
+      $output = '';
+      $output .= '<p>' . t('Conference statistics') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Social links in header of page.
+ *
+ * @return
+ *   HTML output.
+ */
+function conferencestats_header_bar() {
+  $output = '';
+
+  $output .= 'TODO - conferencestats.module';
+
+  return $output;
+}
