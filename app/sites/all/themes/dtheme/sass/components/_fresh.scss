@@ -3,6 +3,7 @@
  */
 
 $grey1: #ececec;
+$grey2: #a5a4a4;
 $blue1: #007aac;
 $orange1: #faf3de;
 $bg1: #faf3de;
@@ -322,4 +323,29 @@ table {
 
 #footer{
   margin-top: 1em;
+}
+
+/* node */
+
+.submitted{
+  color: $grey2;
+  font-size: 0.9em;
+}
+
+.node-news {
+  p {
+    margin: 0;
+  }
+}
+
+.node-news.node-teaser {
+  .field-name-field-news-image{
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+
+  ul.links{
+    clear: both;
+    float: right;
+  }
 }

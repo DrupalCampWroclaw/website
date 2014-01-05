@@ -107,6 +107,7 @@ EOS;
 
 
   //initcontent_create_content_bannersliders();
+  initcontent_create_content_news();
 }
 
 /**
@@ -183,47 +184,103 @@ function initcontent_add_page($title, $body, $add_menu_item = FALSE, $menu_param
 
 
 /**
- * Save nodes - Offer Links.
+ * Create nodes.
  */
-function initcontent_create_content_bannersliders() {
+function initcontent_create_content_news() {
   // Banner
   $params = array(
-    'title' => 'DrupalCamp Wrocław',
-    'text' => 'DrupalCamp Wrocław',
-    'filename' => 'bannerslider1.png',
-    'link' => 'contact',
+    'title' => 'DrupalCamp Wrocław 2014 is comming!',
+    'teaser' => '<p>We started preparations for the next edition of DrupalCamp Wroclaw conference (spring edition).&nbsp;This time the conference will take three days.</p>
+',
+    'body' => '<p>We started preparations for the next edition of DrupalCamp Wroclaw conference (spring edition).&nbsp;This time the conference will take three days.</p>
+
+<p><strong>Important dates</strong><br />
+08.12.2013 - 09.03.2014 Call for papers.<br />
+10.03.2014 - 13.04.2014 Voting for sessions.<br />
+16-18.05.2014 DrupalCamp Wroclaw</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Program</strong></p>
+
+<p>Friday 16.05.2013<br />
+- 15:00-20:00 Drupal Basics (room 1)<br />
+- 15:00-20:00 Community Summit - How to promote Drupal in Poland (room 2)</p>
+
+<p>Saturday 17.05.2013<br />
+- 10:00-19:00 Sessions<br />
+- 12:45 - Group photo<br />
+- 20:00 Drupal Party</p>
+
+<p>Sunday 18.05.2013<br />
+- 10:00-17:00 Sessions</p>
+',
+    'filename' => 'zdjecie_grupowe_2013.jpg',
+
     'weight' => 1,
     );
-  initcontent_create_content_bannerslider_node($params);
+  initcontent_create_content_news_node($params);
 }
 
 
 /**
- * Save one node - bannerslider.
+ * Save one node - news.
  */
-function initcontent_create_content_bannerslider_node($params) {
-  $e = entity_create('node', array('type' => 'bannerslider'));
+function initcontent_create_content_news_node($params) {
+/*  $e = entity_create('node', array('type' => 'news'));
 
   // Create a Entity Wrapper of that new Entity.
   $e = entity_metadata_wrapper('node', $e);
   // Set other properties which go after. (Title and fields).
   $e->title = $params['title'];
-  $e->field_bannerslider_text = $params['text'];
-  $e->field_bannerslider_link = $params['link'];
+  $e->body = $params['body'];
+  //$e->teaser = $params['teaser'];
+
 
   $e->field_bannerslider_weight = $params['weight'];
   // The images
   $path = drupal_get_path('module', 'initcontent') . '/content/images/';
   $filename = $params['filename'];
   $file_temp = file_get_contents($path . $filename);
-
-  // Our colorbox settings require this.
-  //$file_temp['alt'] = $data['display_node']->title->value();
-  //$file_temp['title'] = $data['display_node']->title->value();
   $file_temp = file_save_data($file_temp, 'public://' . $filename, FILE_EXISTS_RENAME);
 
-  $e->field_bannerslider_image = (array)$file_temp;
+  $e->field_news_image = (array) $file_temp;
   $e->save();
   $node = $e->value();
   return $node;
+
+
+  $node = new stdClass();
+  $node->type = 'news';
+  $node->title = $params['title'];
+  if ($company_id) {
+    $node->field_card_company_ref['und'][0]['target_id'] = $company_id;
+  }
+  if (!$qr_code) {
+    $qr_code = card_generate_qrcode();
+  }
+  $node->field_qrcode['und'][0]['value'] = $qr_code;
+  node_save($node);
+*/
+
+  $node = new stdClass;
+  $node->type = 'news';
+  node_object_prepare($node);
+  $node->title = $params['title'];
+  $node->uid = 1;
+
+  $node->body[LANGUAGE_NONE][0]['value'] = $params['body'];
+  $node->body[LANGUAGE_NONE]['summary'] = $params['teaser'];
+  $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
+
+   // The images
+  $path = drupal_get_path('module', 'initcontent') . '/content/images/';
+  $filename = $params['filename'];
+  $file_temp = file_get_contents($path . $filename);
+  $file_temp = file_save_data($file_temp, 'public://' . $filename, FILE_EXISTS_RENAME);
+
+  $node->field_news_image[LANGUAGE_NONE][0] = (array) $file_temp;
+
+  //node_submit($node);
+  node_save($node);
 }

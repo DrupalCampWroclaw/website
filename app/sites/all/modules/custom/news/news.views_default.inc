@@ -22,6 +22,7 @@ function news_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -35,7 +36,7 @@ function news_views_default_views() {
   $handler->display->display_options['footer']['php']['id'] = 'php';
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
-  $handler->display->display_options['footer']['php']['php_output'] = '<div class="more-link"><?php print l(t(\'more\'), \'news\'); ?></div>';
+  $handler->display->display_options['footer']['php']['php_output'] = '<div class="more-link"><?php print l(t(\'All news\'), \'news\'); ?></div>';
   /* No results behavior: Global: PHP */
   $handler->display->display_options['empty']['php']['id'] = 'php';
   $handler->display->display_options['empty']['php']['table'] = 'views';
@@ -74,6 +75,7 @@ function news_views_default_views() {
   $handler->display->display_options['path'] = 'main';
   $translatables['news_frontpage'] = array(
     t('Master'),
+    t('News'),
     t('more'),
     t('Apply'),
     t('Reset'),
