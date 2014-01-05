@@ -227,41 +227,6 @@ function initcontent_create_content_news() {
  * Save one node - news.
  */
 function initcontent_create_content_news_node($params) {
-/*  $e = entity_create('node', array('type' => 'news'));
-
-  // Create a Entity Wrapper of that new Entity.
-  $e = entity_metadata_wrapper('node', $e);
-  // Set other properties which go after. (Title and fields).
-  $e->title = $params['title'];
-  $e->body = $params['body'];
-  //$e->teaser = $params['teaser'];
-
-
-  $e->field_bannerslider_weight = $params['weight'];
-  // The images
-  $path = drupal_get_path('module', 'initcontent') . '/content/images/';
-  $filename = $params['filename'];
-  $file_temp = file_get_contents($path . $filename);
-  $file_temp = file_save_data($file_temp, 'public://' . $filename, FILE_EXISTS_RENAME);
-
-  $e->field_news_image = (array) $file_temp;
-  $e->save();
-  $node = $e->value();
-  return $node;
-
-
-  $node = new stdClass();
-  $node->type = 'news';
-  $node->title = $params['title'];
-  if ($company_id) {
-    $node->field_card_company_ref['und'][0]['target_id'] = $company_id;
-  }
-  if (!$qr_code) {
-    $qr_code = card_generate_qrcode();
-  }
-  $node->field_qrcode['und'][0]['value'] = $qr_code;
-  node_save($node);
-*/
 
   $node = new stdClass;
   $node->type = 'news';
