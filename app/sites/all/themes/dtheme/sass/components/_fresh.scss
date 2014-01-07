@@ -513,3 +513,25 @@ table {
     float: right;
   }
 }
+
+
+.view-people{
+  clear: both;
+  float: left;
+  width: 100%;
+  .views-row{
+    float: left;
+    margin: 1em;
+    width: 100px;
+    height: 250px;
+    overflow: hidden;
+    text-align: center;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    p {
+      margin:0 ;
+    }
+  }
+}

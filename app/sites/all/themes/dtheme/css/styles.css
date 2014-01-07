@@ -2321,6 +2321,31 @@ table tr:hover td {
   float: right;
 }
 
+/* line 518, ../sass/components/_fresh.scss */
+.view-people {
+  clear: both;
+  float: left;
+  width: 100%;
+}
+/* line 522, ../sass/components/_fresh.scss */
+.view-people .views-row {
+  float: left;
+  margin: 1em;
+  width: 100px;
+  height: 250px;
+  overflow: hidden;
+  text-align: center;
+}
+/* line 529, ../sass/components/_fresh.scss */
+.view-people .views-row img {
+  width: 100px;
+  height: 100px;
+}
+/* line 533, ../sass/components/_fresh.scss */
+.view-people .views-row p {
+  margin: 0;
+}
+
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */
