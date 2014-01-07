@@ -183,15 +183,15 @@ table {
 
 #header-over {
   height: 330px;
-  @media all and (max-width: 480px) {
+  @media (max-width: 480px) {
     background: url(../images/header-bg2_480.png)  no-repeat center center;
   }
 
-  @media all and (min-width: 481px) and (max-width: 959px) {
+  @media (min-width: 481px) and (max-width: 959px) {
     background: url(../images/header-bg2_959.png)  no-repeat center center;
   }
 
-  @media all and (min-width: 960px) {
+  @media (min-width: 960px) {
     background: transparent url(../images/header-bg2.png) no-repeat center center;
   }
 }

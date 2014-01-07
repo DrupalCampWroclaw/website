@@ -1976,19 +1976,19 @@ table tr:hover td {
 #header-over {
   height: 330px;
 }
-@media all and (max-width: 480px) {
+@media (max-width: 480px) {
   /* line 184, ../sass/components/_fresh.scss */
   #header-over {
     background: url(../images/header-bg2_480.png) no-repeat center center;
   }
 }
-@media all and (min-width: 481px) and (max-width: 959px) {
+@media (min-width: 481px) and (max-width: 959px) {
   /* line 184, ../sass/components/_fresh.scss */
   #header-over {
     background: url(../images/header-bg2_959.png) no-repeat center center;
   }
 }
-@media all and (min-width: 960px) {
+@media (min-width: 960px) {
   /* line 184, ../sass/components/_fresh.scss */
   #header-over {
     background: transparent url(../images/header-bg2.png) no-repeat center center;
