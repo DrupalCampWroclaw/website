@@ -487,6 +487,16 @@ table {
 
 #footer{
   margin-top: 1em;
+  #block-block-1{
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+    padding: 1em 0;
+    > div {
+      padding: 0.5em;
+    }
+  }
 }
 
 /* node */
@@ -520,16 +530,14 @@ table {
   float: left;
   width: 100%;
   .views-row{
+    font-size: 0.9em;
     float: left;
     margin: 1em;
-    width: 100px;
+    width: 150px;
     height: 250px;
     overflow: hidden;
     text-align: center;
-    img {
-      width: 100px;
-      height: 100px;
-    }
+
     p {
       margin:0 ;
     }

@@ -14,6 +14,13 @@ function session_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function session_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_flag_default_flags().
  */
 function session_flag_default_flags() {
@@ -46,11 +53,11 @@ function session_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => FALSE,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'session',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 

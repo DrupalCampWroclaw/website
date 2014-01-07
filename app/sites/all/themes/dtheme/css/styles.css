@@ -2297,51 +2297,59 @@ table tr:hover td {
 #footer {
   margin-top: 1em;
 }
+/* line 490, ../sass/components/_fresh.scss */
+#footer #block-block-1 {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  clear: both;
+  padding: 1em 0;
+}
+/* line 496, ../sass/components/_fresh.scss */
+#footer #block-block-1 > div {
+  padding: 0.5em;
+}
 
 /* node */
-/* line 494, ../sass/components/_fresh.scss */
+/* line 504, ../sass/components/_fresh.scss */
 .submitted {
   color: #a5a4a4;
   font-size: 0.9em;
 }
 
-/* line 500, ../sass/components/_fresh.scss */
+/* line 510, ../sass/components/_fresh.scss */
 .node-news p {
   margin: 0;
 }
 
-/* line 506, ../sass/components/_fresh.scss */
+/* line 516, ../sass/components/_fresh.scss */
 .node-news.node-teaser .field-name-field-news-image {
   float: left;
   margin: 0 1em 1em 0;
 }
-/* line 511, ../sass/components/_fresh.scss */
+/* line 521, ../sass/components/_fresh.scss */
 .node-news.node-teaser ul.links {
   clear: both;
   float: right;
 }
 
-/* line 518, ../sass/components/_fresh.scss */
+/* line 528, ../sass/components/_fresh.scss */
 .view-people {
   clear: both;
   float: left;
   width: 100%;
 }
-/* line 522, ../sass/components/_fresh.scss */
+/* line 532, ../sass/components/_fresh.scss */
 .view-people .views-row {
+  font-size: 0.9em;
   float: left;
   margin: 1em;
-  width: 100px;
+  width: 150px;
   height: 250px;
   overflow: hidden;
   text-align: center;
 }
-/* line 529, ../sass/components/_fresh.scss */
-.view-people .views-row img {
-  width: 100px;
-  height: 100px;
-}
-/* line 533, ../sass/components/_fresh.scss */
+/* line 541, ../sass/components/_fresh.scss */
 .view-people .views-row p {
   margin: 0;
 }

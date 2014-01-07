@@ -32,6 +32,10 @@ function userprofile_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: File Usage: File */
+  $handler->display->display_options['relationships']['user_to_file']['id'] = 'user_to_file';
+  $handler->display->display_options['relationships']['user_to_file']['table'] = 'file_usage';
+  $handler->display->display_options['relationships']['user_to_file']['field'] = 'user_to_file';
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
@@ -74,6 +78,12 @@ function userprofile_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p>[field_user_first_name] [field_user_last_name]</p>
 <p>[field_user_organization]</p>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: File: Upload date */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'file_managed';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'user_to_file';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -184,6 +194,7 @@ function userprofile_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('File'),
     t('<p>[field_user_first_name] [field_user_last_name]</p>
 <p>[field_user_organization]</p>'),
     t('Speakers'),

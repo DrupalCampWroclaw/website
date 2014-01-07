@@ -55,6 +55,84 @@ function session_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-session-field_session_experience_level'
+  $field_instances['node-session-field_session_experience_level'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_experience_level',
+    'label' => 'Experience level',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-session-field_session_language'
+  $field_instances['node-session-field_session_language'] = array(
+    'bundle' => 'session',
+    'default_value' => array(
+      0 => array(
+        'value' => 'pl',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_language',
+    'label' => 'Session Language',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'node-session-field_session_slides'
   $field_instances['node-session-field_session_slides'] = array(
     'bundle' => 'session',
@@ -223,6 +301,8 @@ function session_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Description');
+  t('Experience level');
+  t('Session Language');
   t('Session Time Slot');
   t('Slides');
   t('Speakers');

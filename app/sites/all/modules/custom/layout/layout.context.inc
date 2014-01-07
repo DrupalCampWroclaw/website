@@ -44,6 +44,12 @@ function layout_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-12',
         ),
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => '1',
+          'region' => 'footer',
+          'weight' => '10',
+        ),
       ),
     ),
   );
