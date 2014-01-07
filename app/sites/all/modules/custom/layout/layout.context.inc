@@ -26,23 +26,23 @@ function layout_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-8b25923f8a8f31d204c26febe72e3b65' => array(
-          'module' => 'views',
-          'delta' => '8b25923f8a8f31d204c26febe72e3b65',
-          'region' => 'footer',
-          'weight' => '-10',
-        ),
         'views-sponsors_frontpage_block-block' => array(
           'module' => 'views',
           'delta' => 'sponsors_frontpage_block-block',
           'region' => 'footer',
-          'weight' => '-9',
+          'weight' => '-14',
+        ),
+        'views-8b25923f8a8f31d204c26febe72e3b65' => array(
+          'module' => 'views',
+          'delta' => '8b25923f8a8f31d204c26febe72e3b65',
+          'region' => 'footer',
+          'weight' => '-13',
         ),
         'views-c29026ea424da992d018da7a9cbfe178' => array(
           'module' => 'views',
           'delta' => 'c29026ea424da992d018da7a9cbfe178',
           'region' => 'footer',
-          'weight' => '-8',
+          'weight' => '-12',
         ),
       ),
     ),

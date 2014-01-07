@@ -27,12 +27,13 @@ function conferencestats_header_bar() {
   $attendees = conferencestats_get_attendees_count();
   $days_left = conferencestats_get_day_left();
   $sessions = conferencestats_get_sessions_count();
-
-  $output .= '<div>' . t('Attendees') . ': <span>' . $attendees . '</span></div>';
+  $output .= '<ul>';
+  $output .= '<li>' . t('Attendees') . ': <span>' . $attendees . '</span></li>';
+  $output .= '<li>' . t('Sessions') . ': <span>' . $sessions . '</span></li>';
   if ($days_left) {
-    $output .= '<div>' . t('Time left') . ': <span>' . $days_left . '</span> ' . t('days') . '</div>';
+    $output .= '<li>' . t('Time left') . ': <span>' . $days_left . '</span> ' . t('days') . '</li>';
   }
-  $output .= '<div>' . t('Sessions') . ': <span>' . $sessions . '</span></div>';
+  $output .= '</ul>';
 
   return $output;
 }

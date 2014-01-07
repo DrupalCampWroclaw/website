@@ -37,7 +37,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['empty']['php']['table'] = 'views';
   $handler->display->display_options['empty']['php']['field'] = 'php';
   $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No diamond sponsors\'); ?>';
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No diamond sponsors yet.\')  . \' \' . l(t(\'Become a sponsor\'), \'sponsors\'); ?>';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -107,7 +107,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['empty']['php']['table'] = 'views';
   $handler->display->display_options['empty']['php']['field'] = 'php';
   $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No gold sponsors\'); ?>';
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No gold sponsors yet.\')  . \' \' . l(t(\'Become a sponsor\'), \'sponsors\'); ?>';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -143,7 +143,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['empty']['php']['table'] = 'views';
   $handler->display->display_options['empty']['php']['field'] = 'php';
   $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No diamond sponsors\'); ?>';
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No diamond sponsors yet.\')  . \' \' . l(t(\'Become a sponsor\'), \'sponsors\'); ?>';
 
   /* Display: platinium */
   $handler = $view->new_display('block', 'platinium', 'block_1');
@@ -155,7 +155,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['empty']['php']['table'] = 'views';
   $handler->display->display_options['empty']['php']['field'] = 'php';
   $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No platinium sponsors\'); ?>';
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No platinium sponsors yet.\')  . \' \' . l(t(\'Become a sponsor\'), \'sponsors\');; ?>';
 
   /* Display: gold */
   $handler = $view->new_display('block', 'gold', 'block_2');

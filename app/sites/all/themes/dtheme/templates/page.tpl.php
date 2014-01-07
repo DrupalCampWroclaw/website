@@ -18,7 +18,7 @@
         <div id="header-bar-center-text" class="clearfix">
           <div id="conference-statistics"><?php print $confstats; ?></div>
           <div id="user-links"><?php print $userlinks; ?></div>
-          <div id="social-links" ><?php print $sociallinks; ?></div>
+          <?php /*<div id="social-links" ><?php print $sociallinks; ?></div>*/ ?>
         </div>
 
         <div id="header-bar-right">

@@ -34,7 +34,7 @@ function userprofile_header_bar() {
   else {
     $menu_links[] = array(
       'href' =>  'user/register',
-      'title' => t('Register for free'),
+      'title' => t('Register'),
     );
     $menu_links[] = array(
       'href' =>  'user/login',

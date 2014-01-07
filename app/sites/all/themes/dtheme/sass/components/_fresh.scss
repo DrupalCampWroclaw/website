@@ -250,7 +250,7 @@ table {
   }
 
   @media all and (min-width: 481px) and (max-width: 959px) {
-    background: url("../images/header-bar-center3.png") repeat-x;
+   /*  background: url("../images/header-bar-center3.png") repeat-x;
     #header-bar-center {
       height:100px;
     }
@@ -263,7 +263,7 @@ table {
       background: url("../images/header-bar-right3.png") repeat-x;
       height:100px;
 
-    }
+    } */
   }
 
   @media all and (min-width: 960px) {
@@ -385,11 +385,67 @@ table {
 }
 
 #header-bar-center {
+  #user-links{
+    text-align: right;
+  }
+  #conference-statistics {
+    text-align: left;
+    ul {
+      margin: 0;
+      padding: 0.5em;
+      li {
+        display: inline;
+        padding:  0.5em;
+      }
+    }
+  }
 
   @media all and (max-width: 480px) {
+    font-size: 0.70em;
+
+    $zen-column-count: 4;
+    #conference-statistics {
+      @include zen-grid-item(2, 1);
+    }
+    #user-links {
+      @include zen-grid-item(2, 3);
+
+    }
+
+     #conference-statistics {
+
+
+      ul {
+        margin: 0;
+        padding: 0.5em 0;
+        li {
+          display: block;
+          padding:  0 0.2em 0 0;
+        }
+      }
+
+     }
+     #user-links {
+      font-size: 1.1em;
+      ul {
+        padding: 0.5em 0;
+        li {
+          display: block;
+        }
+      }
+     }
+
   }
 
   @media all and (min-width: 481px) and (max-width: 959px) {
+    font-size: 0.9em;
+    $zen-column-count: 4;
+    #conference-statistics {
+      @include zen-grid-item(3, 1);
+    }
+    #user-links {
+      @include zen-grid-item(1, 4);
+    }
   }
 
   @media all and (min-width: 960px) {
@@ -399,11 +455,11 @@ table {
       @include zen-grid-item(2, 1);
     }
     #user-links {
-      @include zen-grid-item(1, 3);
+      @include zen-grid-item(2, 3);
     }
-    #social-links {
+   /*  #social-links {
       @include zen-grid-item(1, 4);
-    }
+    } */
   }
 }
 
