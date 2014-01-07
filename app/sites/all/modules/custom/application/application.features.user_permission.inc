@@ -778,6 +778,13 @@ function application_user_default_permissions() {
     'module' => 'services',
   );
 
+  // Exported permission: 'protected from spambot scans'.
+  $permissions['protected from spambot scans'] = array(
+    'name' => 'protected from spambot scans',
+    'roles' => array(),
+    'module' => 'spambot',
+  );
+
   // Exported permission: 'revert revisions'.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',

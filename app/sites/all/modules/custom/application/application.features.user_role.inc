@@ -22,5 +22,11 @@ function application_user_default_roles() {
     'weight' => 3,
   );
 
+  // Exported role: speaker.
+  $roles['speaker'] = array(
+    'name' => 'speaker',
+    'weight' => 4,
+  );
+
   return $roles;
 }

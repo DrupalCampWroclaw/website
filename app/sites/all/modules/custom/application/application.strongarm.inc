@@ -454,6 +454,97 @@ function application_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_blacklisted_delay';
+  $strongarm->value = '0';
+  $export['spambot_blacklisted_delay'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_blocked_message_email';
+  $strongarm->value = 'Your email address or username or IP address is blacklisted.';
+  $export['spambot_blocked_message_email'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_blocked_message_ip';
+  $strongarm->value = 'Your email address or username or IP address is blacklisted.';
+  $export['spambot_blocked_message_ip'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_blocked_message_username';
+  $strongarm->value = 'Your email address or username or IP address is blacklisted.';
+  $export['spambot_blocked_message_username'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_check_blocked_accounts';
+  $strongarm->value = 0;
+  $export['spambot_check_blocked_accounts'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_criteria_email';
+  $strongarm->value = '3';
+  $export['spambot_criteria_email'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_criteria_ip';
+  $strongarm->value = '20';
+  $export['spambot_criteria_ip'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_criteria_username';
+  $strongarm->value = '0';
+  $export['spambot_criteria_username'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_cron_user_limit';
+  $strongarm->value = '0';
+  $export['spambot_cron_user_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_last_checked_uid';
+  $strongarm->value = '0';
+  $export['spambot_last_checked_uid'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_sfs_api_key';
+  $strongarm->value = '';
+  $export['spambot_sfs_api_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_spam_account_action';
+  $strongarm->value = '0';
+  $export['spambot_spam_account_action'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'spambot_user_register_protect';
+  $strongarm->value = 1;
+  $export['spambot_user_register_protect'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
   $strongarm->value = 'dtheme';
   $export['theme_default'] = $strongarm;
