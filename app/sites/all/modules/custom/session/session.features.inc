@@ -47,11 +47,12 @@ function session_flag_default_flags() {
       'teaser' => 0,
       'rss' => 0,
       'diff_standard' => 0,
+      'token' => 0,
     ),
     'show_as_field' => 0,
     'show_on_form' => 0,
     'access_author' => '',
-    'show_contextual_link' => FALSE,
+    'show_contextual_link' => 0,
     'i18n' => 0,
     'module' => 'session',
     'locked' => array(

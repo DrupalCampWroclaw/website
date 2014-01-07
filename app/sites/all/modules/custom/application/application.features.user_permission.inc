@@ -486,6 +486,7 @@ function application_user_default_permissions() {
     'name' => 'create field_session_timeslot',
     'roles' => array(
       'administrator' => 'administrator',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'field_permissions',
   );
@@ -504,6 +505,7 @@ function application_user_default_permissions() {
     'name' => 'create session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -549,6 +551,7 @@ function application_user_default_permissions() {
     'name' => 'delete any session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'node',
   );
@@ -576,6 +579,7 @@ function application_user_default_permissions() {
     'name' => 'delete own session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'node',
   );
@@ -621,6 +625,7 @@ function application_user_default_permissions() {
     'name' => 'edit any session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'node',
   );
@@ -649,6 +654,7 @@ function application_user_default_permissions() {
     'name' => 'edit field_session_timeslot',
     'roles' => array(
       'administrator' => 'administrator',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'field_permissions',
   );
@@ -668,6 +674,7 @@ function application_user_default_permissions() {
     'name' => 'edit own field_session_timeslot',
     'roles' => array(
       'administrator' => 'administrator',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'field_permissions',
   );
@@ -686,6 +693,7 @@ function application_user_default_permissions() {
     'name' => 'edit own session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -945,6 +953,9 @@ function application_user_default_permissions() {
     'name' => 'view field_session_timeslot',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'field_permissions',
   );
@@ -964,6 +975,7 @@ function application_user_default_permissions() {
     'name' => 'view own field_session_timeslot',
     'roles' => array(
       'administrator' => 'administrator',
+      'conference organizer' => 'conference organizer',
     ),
     'module' => 'field_permissions',
   );

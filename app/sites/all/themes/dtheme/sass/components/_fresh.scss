@@ -41,7 +41,7 @@ a:visited {
 
 #mainmenu-over {
   background: url(../images/menu-bg1.png);
-  margin-top: 1em;
+  margin-top: 0em;
 }
 
 #mainmenu {
@@ -176,18 +176,23 @@ table {
 
 /** ---------------------------------  */
 
+#header-over-bg{
+   background: url(../images/header-bg3.png) repeat-x;
+   height: 330px;
+}
+
 #header-over {
+  height: 330px;
   @media all and (max-width: 480px) {
-    height: 301px;
-    background: url(../images/header-bg1.png) repeat-x;
+    background: url(../images/header-bg2_480.png)  no-repeat center center;
   }
 
   @media all and (min-width: 481px) and (max-width: 959px) {
+    background: url(../images/header-bg2_959.png)  no-repeat center center;
   }
 
   @media all and (min-width: 960px) {
-    height: 301px;
-    background: url(../images/header-bg1.png) repeat-x;
+    background: transparent url(../images/header-bg2.png) no-repeat center center;
   }
 }
 
@@ -222,6 +227,7 @@ table {
     left:0;
     z-index: 100;
   }
+
   #header-bar-right {
     position: absolute;
     top:0;
@@ -478,9 +484,11 @@ table {
 #footer {
   .block {
     background: $bg1;
+    padding: 0.5em 1em;
     h2.block-title {
       color: $red1;
       text-transform: uppercase;
+      line-height: 1.7em;
     }
   }
 }

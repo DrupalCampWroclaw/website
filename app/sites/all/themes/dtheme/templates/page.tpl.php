@@ -10,18 +10,20 @@
 
 <div id="page-all">
 
-  <div id="header-over">
-    <div id="header-bar" class="clearfix">
-      <div id="header-bar-center">
-       <div id="header-bar-left">
-       </div>
-        <div id="header-bar-center-text" class="clearfix">
-          <div id="conference-statistics"><?php print $confstats; ?></div>
-          <div id="user-links"><?php print $userlinks; ?></div>
-          <?php /*<div id="social-links" ><?php print $sociallinks; ?></div>*/ ?>
-        </div>
+  <div id="header-over-bg">
+    <div id="header-over">
+      <div id="header-bar" class="clearfix">
+        <div id="header-bar-center">
+         <div id="header-bar-left">
+         </div>
+          <div id="header-bar-center-text" class="clearfix">
+            <div id="conference-statistics"><?php print $confstats; ?></div>
+            <div id="user-links"><?php print $userlinks; ?></div>
+            <?php /*<div id="social-links" ><?php print $sociallinks; ?></div>*/ ?>
+          </div>
 
-        <div id="header-bar-right">
+          <div id="header-bar-right">
+          </div>
         </div>
       </div>
     </div>
