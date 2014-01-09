@@ -1,7 +1,7 @@
 name = Layout
 core = 7.x
 package = APP
-version = 7.x-1.0-beta5
+version = 7.x-1.0-beta6
 project = layout
 dependencies[] = block
 dependencies[] = context

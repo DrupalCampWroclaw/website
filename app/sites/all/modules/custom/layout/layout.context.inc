@@ -88,6 +88,12 @@ function layout_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'block-2' => array(
+          'module' => 'block',
+          'delta' => '2',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
