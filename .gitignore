@@ -18,6 +18,9 @@ conf/local/*
 docs/local/*
 !docs/local/README.txt
 
+databases/*
+!databases/README.txt
+
 # Ignore logs
 conf/build/logs/*
 !conf/build/logs/README.txt
