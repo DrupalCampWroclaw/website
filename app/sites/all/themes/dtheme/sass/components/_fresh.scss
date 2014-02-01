@@ -24,6 +24,7 @@ a:visited {
   color: $blue1;
 }
 
+#page-bottom-links,
 #main,
 #header {
   max-width: $max-page-width;
@@ -480,6 +481,7 @@ table {
   }
 }
 
+#page-bottom-links-over,
 #main,
 #footer {
   .block {
@@ -550,4 +552,9 @@ table {
       margin:0 ;
     }
   }
+}
+
+#page-bottom-links-over{
+  margin-top: 1em;
+  text-align: center;
 }
