@@ -2360,12 +2360,18 @@ table tr:hover td {
 }
 
 /* line 543, ../sass/components/_fresh.scss */
+.node-news.view-mode-full .field-name-field-news-image {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+/* line 549, ../sass/components/_fresh.scss */
 .view-people {
   clear: both;
   float: left;
   width: 100%;
 }
-/* line 547, ../sass/components/_fresh.scss */
+/* line 553, ../sass/components/_fresh.scss */
 .view-people .views-row {
   font-size: 0.9em;
   float: left;
@@ -2375,39 +2381,39 @@ table tr:hover td {
   overflow: hidden;
   text-align: center;
 }
-/* line 556, ../sass/components/_fresh.scss */
+/* line 562, ../sass/components/_fresh.scss */
 .view-people .views-row p {
   margin: 0;
 }
 
-/* line 562, ../sass/components/_fresh.scss */
+/* line 568, ../sass/components/_fresh.scss */
 #page-bottom-links-over {
   margin-top: 1em;
   text-align: center;
 }
 
-/* line 573, ../sass/components/_fresh.scss */
+/* line 579, ../sass/components/_fresh.scss */
 #block-layout-social-facebook-gplus-twitter #social-media-widgets .social-media {
   padding-top: 1em;
   text-align: center;
   overflow: hidden;
 }
 @media all and (min-width: 960px) {
-  /* line 581, ../sass/components/_fresh.scss */
+  /* line 587, ../sass/components/_fresh.scss */
   #block-layout-social-facebook-gplus-twitter #social-media-widgets #social-media-twitter {
     float: left;
     width: 33.33333%;
     margin-left: 0%;
     margin-right: -33.33333%;
   }
-  /* line 584, ../sass/components/_fresh.scss */
+  /* line 590, ../sass/components/_fresh.scss */
   #block-layout-social-facebook-gplus-twitter #social-media-widgets #social-media-gplus {
     float: left;
     width: 33.33333%;
     margin-left: 33.33333%;
     margin-right: -66.66667%;
   }
-  /* line 587, ../sass/components/_fresh.scss */
+  /* line 593, ../sass/components/_fresh.scss */
   #block-layout-social-facebook-gplus-twitter #social-media-widgets #social-media-fb {
     float: left;
     width: 33.33333%;
@@ -2416,18 +2422,18 @@ table tr:hover td {
   }
 }
 
-/* line 598, ../sass/components/_fresh.scss */
+/* line 604, ../sass/components/_fresh.scss */
 #block-layout-flickr-gallery #flickr_badge_uber_wrapper,
 #block-layout-flickr-gallery #flickr_badge_wrapper {
   width: 100%;
   text-align: center;
 }
-/* line 602, ../sass/components/_fresh.scss */
+/* line 608, ../sass/components/_fresh.scss */
 #block-layout-flickr-gallery .flickr_badge_image {
   /* float: left; */
   display: inline;
 }
-/* line 606, ../sass/components/_fresh.scss */
+/* line 612, ../sass/components/_fresh.scss */
 #block-layout-flickr-gallery #flickr_badge_source {
   clear: both;
   text-align: center;
