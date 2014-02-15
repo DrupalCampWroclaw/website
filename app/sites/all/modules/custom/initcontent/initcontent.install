@@ -4,10 +4,110 @@
  * Implemments hook_install().
  */
 function initcontent_install() {
+  // Create users.
   for ($i = 1; $i <= 10; $i++) {
     $params = array('username' => 'user' . $i);
     initcontent_add_user($params);
   }
+
+
+
+  // Add menu link home.
+  $menu_params = array(
+    'link_title' => 'Home',
+    'weight' => -50,
+  );
+  initconent_add_menu_link($menu_params);
+
+  // Add menu link home.
+  $menu_params = array(
+    'link_title' => 'Contact',
+    'weight' => 50,
+    'link_path' => 'contact',
+  );
+  initconent_add_menu_link($menu_params);
+
+  // Create pages.
+  $weight = 5;
+  $title = 'Important Dates';
+  $body = <<<EOS
+
+<table style="border: 1px solid black;">
+  <tr>
+    <th class="date">Date</th>
+    <th class="description">Description</th>
+  </tr>
+  <tr class="even">
+    <td class="date">08.12.2013 - 09.03.2014 </td>
+    <td class="description">Call for papers. </td>
+  </tr>
+  <tr class="odd">
+    <td class="date">10.03.2014 - 13.04.2014 </td>
+    <td class="description">Voting for sessions.</td>
+  </tr>
+  <tr class="even">
+    <td class="date">17 - 18.05.2014 </td>
+    <td class="description">DrupalCamp Wroclaw</td>
+  </tr>
+
+</table>
+
+EOS;
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+
+  // Add page.
+/*  $title = 'Speakers';
+  $body = <<<EOS
+Speakers
+EOS;
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+*/
+    // Add page.
+  $title = 'Sessions';
+  $body = <<<EOS
+<h2>Call for papers</h2>
+
+<ul>
+  <li>The deadline for online submission is 9 march 2014.</li>
+  <li>Authors may submit up to 3 sessions.</li>
+  <li>Please send session title, short description, language (english or polish) and information about special requirements</li>
+  <li>Submit your session to e-mail <a href="mailto:info@drupalcampwroclaw.pl">info@drupalcampwroclaw.pl</a> or by <a href="/contact">contact form</a></li>
+</ul>
+
+EOS;
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+
+  // Add page.
+/*  $title = 'Attendees';
+  $body = <<<EOS
+Attendees
+EOS;
+
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));*/
+
+  // Add page.
+  $title = 'Sponsors';
+  $body = <<<EOS
+<p>With our proposal we would like to encourage you to help with organization of the third conference in Poland devoted to CMS Drupal. We believe that the event will attract many experts,at the same time allowing you to promote your own business. <a href="http://www.drupalcampwroclaw.pl/downloadfiles/sponsorship_offer.pdf">Click here to download Sponsorship offer in PDF</a></p>
+
+<p>&nbsp;</p>
+<h2>Sponsor packages</h2>
+<p style="text-align:center"><a href="http://www.drupalcampwroclaw.pl/downloadfiles/sponsorship_offer.pdf"><img src="/downloadfiles/sponsor_packages.png" alt="" /></a></p>
+
+EOS;
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));
+
+    // Add page.
+/*  $title = 'Wroclaw';
+  $body = <<<EOS
+Informations about Wroclaw
+EOS;
+
+  initcontent_add_page($title, $body, TRUE, array('weight' => $weight++));*/
+
+
+  //initcontent_create_content_bannersliders();
+  initcontent_create_content_news();
 }
 
 /**
@@ -26,4 +126,126 @@ function initcontent_add_user($params) {
   );
   $account = user_save('', $userinfo);
   return $account;
+}
+
+/**
+ * Add menu link item.
+ */
+function initconent_add_menu_link($menu_params) {
+  module_load_include('inc', 'menu', 'menu.admin');
+  $form_state = array(
+    'values' => array(
+      'menu_name' => isset($menu_params['menu_name']) ? $menu_params['menu_name'] : 'main-menu',
+      'weight' =>  isset($menu_params['weight']) ? $menu_params['weight'] :'1',
+      'link_title' => isset($menu_params['link_title']) ? $menu_params['link_title'] : 'Link title',
+      'link_path' => isset($menu_params['link_path']) ? $menu_params['link_path'] : '<front>',
+      'module' => 'menu',
+      'mlid' => isset($menu_params['mlid']) ? $menu_params['mlid'] : 0,
+      'plid' => isset($menu_params['plid']) ? $menu_params['plid'] : 0,
+    ),
+  );
+  // Validate and transform the item, so it conforms with Drupal standards.
+  menu_edit_item_validate(array(), $form_state);
+  // Save the item to database.
+  menu_link_save($form_state['values']);
+}
+
+/**
+ * Create node Page.
+ */
+function initcontent_add_page($title, $body, $add_menu_item = FALSE, $menu_params = array()) {
+  $type = 'page';
+  $uid = 1;
+
+  $node = new stdClass();
+  $node->type = $type;
+  $node->uid = $uid;
+  $node->status = 1;
+  $node->commment = 0;
+  $node->promote = 0;
+  $node->sticky = 0;
+  $node->is_new = TRUE;
+  node_object_prepare($node);
+
+  $node->title = $title;
+  $node->body[LANGUAGE_NONE][0]['value'] = $body;
+  $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
+  $node->uid = 1;
+  node_save($node);
+
+  if ($add_menu_item) {
+    $menu_params['link_path'] = 'node/' . $node->nid;
+    $menu_params['link_title'] = $title;
+    initconent_add_menu_link($menu_params);
+  }
+
+  return $node;
+}
+
+
+/**
+ * Create nodes.
+ */
+function initcontent_create_content_news() {
+  // Banner
+  $params = array(
+    'title' => 'DrupalCamp Wrocław 2014 is comming!',
+    'teaser' => '<p>We started preparations for the next edition of DrupalCamp Wroclaw conference (spring edition).&nbsp;This time the conference will take three days.</p>
+',
+    'body' => '<p>We started preparations for the next edition of DrupalCamp Wroclaw conference (spring edition).&nbsp;This time the conference will take three days.</p>
+
+<p><strong>Important dates</strong><br />
+08.12.2013 - 09.03.2014 Call for papers.<br />
+10.03.2014 - 13.04.2014 Voting for sessions.<br />
+16-18.05.2014 DrupalCamp Wroclaw</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Program</strong></p>
+
+<p>Friday 16.05.2013<br />
+- 15:00-20:00 Drupal Basics (room 1)<br />
+- 15:00-20:00 Community Summit - How to promote Drupal in Poland (room 2)</p>
+
+<p>Saturday 17.05.2013<br />
+- 10:00-19:00 Sessions<br />
+- 12:45 - Group photo<br />
+- 20:00 Drupal Party</p>
+
+<p>Sunday 18.05.2013<br />
+- 10:00-17:00 Sessions</p>
+',
+    'filename' => 'zdjecie_grupowe_2013.jpg',
+
+    'weight' => 1,
+    );
+  initcontent_create_content_news_node($params);
+}
+
+
+/**
+ * Save one node - news.
+ */
+function initcontent_create_content_news_node($params) {
+
+  $node = new stdClass;
+  $node->type = 'news';
+  node_object_prepare($node);
+  $node->title = $params['title'];
+  $node->uid = 1;
+
+  $node->body[LANGUAGE_NONE][0]['value'] = $params['body'];
+  $node->body[LANGUAGE_NONE]['summary'] = $params['teaser'];
+  $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
+
+   // The images
+  $path = drupal_get_path('module', 'initcontent') . '/content/images/';
+  $filename = $params['filename'];
+  $file_temp = file_get_contents($path . $filename);
+  $file_temp = file_save_data($file_temp, 'public://' . $filename, FILE_EXISTS_RENAME);
+
+  $node->field_news_image[LANGUAGE_NONE][0] = (array) $file_temp;
+
+  //node_submit($node);
+  node_save($node);
 }

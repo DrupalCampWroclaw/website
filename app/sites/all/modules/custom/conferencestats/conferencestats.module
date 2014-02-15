@@ -1,0 +1,83 @@
+<?php
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function conferencestats_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#conferencestats':
+      $output = '';
+      $output .= '<p>' . t('Conference statistics') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Social links in header of page.
+ *
+ * @return
+ *   HTML output.
+ */
+function conferencestats_header_bar() {
+  $output = '';
+  $attendees = conferencestats_get_attendees_count();
+  $days_left = conferencestats_get_day_left();
+  $sessions = conferencestats_get_sessions_count();
+  $output .= '<ul>';
+  $output .= '<li>' . t('Attendees') . ': <span>' . $attendees . '</span></li>';
+  $output .= '<li>' . t('Sessions') . ': <span>' . $sessions . '</span></li>';
+  if ($days_left) {
+    $output .= '<li>' . t('Time left') . ': <span>' . $days_left . '</span> ' . t('days') . '</li>';
+  }
+  $output .= '</ul>';
+
+  return $output;
+}
+
+/**
+ * Get number of attendees.
+ */
+function conferencestats_get_attendees_count() {
+  $query = db_select('users', 'u');
+  $query->fields('u');
+  $query->condition('uid', '1', '>');
+  $query->condition('status', '1');
+  $result = $query->execute();
+  return sprintf("%02s", $result->rowCount());
+}
+
+/**
+ * Get days left.
+ */
+function conferencestats_get_day_left() {
+  $today = date('m/d/Y');
+  $today = strtotime($today);
+  $finish = '2014-05-16';
+  $finish = strtotime($finish);
+
+  $diff = $finish - $today;
+  if ($diff > 0) {
+    $daysleft = floor($diff/(60*60*24));
+  }
+  else {
+    $daysleft = NULL;
+  }
+  return $daysleft;
+}
+
+/**
+ * Get number of sessions.
+ * @TODO - only accepted sessions.
+ */
+function conferencestats_get_sessions_count() {
+  $query = db_select('node', 'n');
+  $query->fields('n');
+  $query->condition('type', 'session');
+  $query->condition('status', '1');
+  $result = $query->execute();
+  return sprintf("%02s", $result->rowCount());
+}

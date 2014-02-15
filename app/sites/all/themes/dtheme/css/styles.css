@@ -592,7 +592,9 @@ table {
  * For screen sizes larger than 1200px, prevent excessively long lines of text
  * by setting a max-width.
  */
-/* line 34, ../sass/layouts/_responsive.scss */
+/* line 37, ../sass/layouts/_responsive.scss */
+#footer-inner,
+#mainmenu,
 #page,
 .region-bottom {
   margin-left: auto;
@@ -601,7 +603,7 @@ table {
 }
 
 /* Apply the shared properties of grid items in a single, efficient ruleset. */
-/* line 46, ../sass/layouts/_responsive.scss */
+/* line 49, ../sass/layouts/_responsive.scss */
 #header,
 #content,
 #navigation,
@@ -636,14 +638,14 @@ table {
 
 /* Navigation bar */
 @media all and (min-width: 480px) {
-  /* line 60, ../sass/layouts/_responsive.scss */
+  /* line 63, ../sass/layouts/_responsive.scss */
   #main {
     /* Move all the children of #main down to make room. */
     padding-top: 3em;
     position: relative;
   }
 
-  /* line 65, ../sass/layouts/_responsive.scss */
+  /* line 68, ../sass/layouts/_responsive.scss */
   #navigation {
     /* Move the navbar up inside #main's padding. */
     position: absolute;
@@ -659,19 +661,19 @@ table {
   /**
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 86, ../sass/layouts/_responsive.scss */
+  /* line 89, ../sass/layouts/_responsive.scss */
   .sidebar-first {
     /* Span 2 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
   }
-  /* line 88, ../sass/layouts/_responsive.scss */
+  /* line 91, ../sass/layouts/_responsive.scss */
   .sidebar-first #content {
     float: left;
     width: 66.66667%;
     margin-left: 33.33333%;
     margin-right: -100%;
   }
-  /* line 93, ../sass/layouts/_responsive.scss */
+  /* line 96, ../sass/layouts/_responsive.scss */
   .sidebar-first .region-sidebar-first {
     float: left;
     width: 33.33333%;
@@ -682,19 +684,19 @@ table {
   /**
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 101, ../sass/layouts/_responsive.scss */
+  /* line 104, ../sass/layouts/_responsive.scss */
   .sidebar-second {
     /* Span 2 columns, starting in 1st column from left. */
     /* Span 1 column, starting in 3rd column from left. */
   }
-  /* line 103, ../sass/layouts/_responsive.scss */
+  /* line 106, ../sass/layouts/_responsive.scss */
   .sidebar-second #content {
     float: left;
     width: 66.66667%;
     margin-left: 0%;
     margin-right: -66.66667%;
   }
-  /* line 108, ../sass/layouts/_responsive.scss */
+  /* line 111, ../sass/layouts/_responsive.scss */
   .sidebar-second .region-sidebar-second {
     float: left;
     width: 33.33333%;
@@ -705,27 +707,27 @@ table {
   /**
    * The layout when there are two sidebars.
    */
-  /* line 116, ../sass/layouts/_responsive.scss */
+  /* line 119, ../sass/layouts/_responsive.scss */
   .two-sidebars {
     /* Span 2 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
     /* Start a new row and span all 3 columns. */
   }
-  /* line 118, ../sass/layouts/_responsive.scss */
+  /* line 121, ../sass/layouts/_responsive.scss */
   .two-sidebars #content {
     float: left;
     width: 66.66667%;
     margin-left: 33.33333%;
     margin-right: -100%;
   }
-  /* line 123, ../sass/layouts/_responsive.scss */
+  /* line 126, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-first {
     float: left;
     width: 33.33333%;
     margin-left: 0%;
     margin-right: -33.33333%;
   }
-  /* line 128, ../sass/layouts/_responsive.scss */
+  /* line 131, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second {
     float: left;
     width: 100%;
@@ -739,7 +741,7 @@ table {
     /* Span 1 column, starting in the 2nd column from left. */
     /* Span 1 column, starting in the 3rd column from left. */
   }
-  /* line 134, ../sass/layouts/_responsive.scss */
+  /* line 137, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block {
     padding-left: 10px;
     padding-right: 10px;
@@ -749,7 +751,7 @@ table {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-  /* line 138, ../sass/layouts/_responsive.scss */
+  /* line 141, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
     float: left;
     width: 33.33333%;
@@ -757,14 +759,14 @@ table {
     margin-right: -33.33333%;
     clear: left;
   }
-  /* line 143, ../sass/layouts/_responsive.scss */
+  /* line 146, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
     float: left;
     width: 33.33333%;
     margin-left: 33.33333%;
     margin-right: -66.66667%;
   }
-  /* line 147, ../sass/layouts/_responsive.scss */
+  /* line 150, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n) {
     float: left;
     width: 33.33333%;
@@ -779,19 +781,19 @@ table {
   /**
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 164, ../sass/layouts/_responsive.scss */
+  /* line 167, ../sass/layouts/_responsive.scss */
   .sidebar-first {
     /* Span 4 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
   }
-  /* line 166, ../sass/layouts/_responsive.scss */
+  /* line 169, ../sass/layouts/_responsive.scss */
   .sidebar-first #content {
     float: left;
     width: 80%;
     margin-left: 20%;
     margin-right: -100%;
   }
-  /* line 171, ../sass/layouts/_responsive.scss */
+  /* line 174, ../sass/layouts/_responsive.scss */
   .sidebar-first .region-sidebar-first {
     float: left;
     width: 20%;
@@ -802,19 +804,19 @@ table {
   /**
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 179, ../sass/layouts/_responsive.scss */
+  /* line 182, ../sass/layouts/_responsive.scss */
   .sidebar-second {
     /* Span 4 columns, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-  /* line 181, ../sass/layouts/_responsive.scss */
+  /* line 184, ../sass/layouts/_responsive.scss */
   .sidebar-second #content {
     float: left;
     width: 80%;
     margin-left: 0%;
     margin-right: -80%;
   }
-  /* line 186, ../sass/layouts/_responsive.scss */
+  /* line 189, ../sass/layouts/_responsive.scss */
   .sidebar-second .region-sidebar-second {
     float: left;
     width: 20%;
@@ -825,27 +827,27 @@ table {
   /**
    * The layout when there are two sidebars.
    */
-  /* line 194, ../sass/layouts/_responsive.scss */
+  /* line 197, ../sass/layouts/_responsive.scss */
   .two-sidebars {
     /* Span 3 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-  /* line 196, ../sass/layouts/_responsive.scss */
+  /* line 199, ../sass/layouts/_responsive.scss */
   .two-sidebars #content {
     float: left;
     width: 60%;
     margin-left: 20%;
     margin-right: -80%;
   }
-  /* line 201, ../sass/layouts/_responsive.scss */
+  /* line 204, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-first {
     float: left;
     width: 20%;
     margin-left: 0%;
     margin-right: -20%;
   }
-  /* line 206, ../sass/layouts/_responsive.scss */
+  /* line 209, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second {
     float: left;
     width: 20%;
@@ -1789,6 +1791,648 @@ tr.selected td {
     display: none;
   }
 }
+/**
+ * Colors.
+ */
+/**
+ * Styles.
+ */
+/* line 16, ../sass/components/_fresh.scss */
+body {
+  background: url(../images/body-bg1.png);
+  font-family: 'Droid Sans', sans-serif;
+}
+
+/* line 23, ../sass/components/_fresh.scss */
+a,
+a:link,
+a:visited {
+  color: #007aac;
+}
+
+/* line 29, ../sass/components/_fresh.scss */
+#page-bottom-links,
+#main,
+#header {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 39, ../sass/components/_fresh.scss */
+#site-name {
+  padding: 0.25em 1em;
+}
+
+@media (max-width: 480px) {
+  /* line 43, ../sass/components/_fresh.scss */
+  .sidebars {
+    margin-top: 1em;
+  }
+}
+
+/* line 49, ../sass/components/_fresh.scss */
+#mainmenu-over {
+  background: url(../images/menu-bg1.png);
+  margin-top: 0em;
+}
+
+/* line 54, ../sass/components/_fresh.scss */
+#mainmenu {
+  padding: 0;
+}
+/* line 56, ../sass/components/_fresh.scss */
+#mainmenu h2.block-title {
+  display: none;
+}
+/* line 59, ../sass/components/_fresh.scss */
+#mainmenu .block {
+  margin: 0;
+  padding: 0;
+}
+/* line 65, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li {
+  display: inline;
+  padding: 0.7 1em;
+  background: transparent;
+  font-size: 1.2em;
+  margin: 0 0.5em;
+  text-align: center;
+}
+/* line 70, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li ul {
+  margin: 0;
+  padding: 0;
+  top: 2em;
+}
+/* line 74, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li ul li {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  background: #eb4e3a;
+}
+/* line 83, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li ul li:hover a {
+  color: black;
+}
+/* line 87, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li a {
+  color: white;
+  display: block;
+  padding: 0.5em 0.5em;
+}
+/* line 97, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li:hover {
+  background: #faf3de;
+}
+/* line 101, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li:hover > a {
+  color: black;
+}
+/* line 106, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li.active-trail,
+#mainmenu ul#superfish-1.sf-menu li.active {
+  background: #007aac;
+}
+/* line 108, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li.active-trail a,
+#mainmenu ul#superfish-1.sf-menu li.active a {
+  color: white;
+}
+/* line 115, ../sass/components/_fresh.scss */
+#mainmenu ul#superfish-1.sf-menu li:hover ul,
+#mainmenu ul#superfish-1.sf-menu li.active ul,
+#mainmenu ul#superfish-1.sf-menu li.active-trail ul {
+  top: 2em;
+}
+/* line 120, ../sass/components/_fresh.scss */
+#mainmenu a {
+  text-decoration: none;
+}
+
+/* line 125, ../sass/components/_fresh.scss */
+table {
+  width: 100%;
+}
+/* line 127, ../sass/components/_fresh.scss */
+table th {
+  background-color: #f0f0f0;
+  border-color: #d9d9d9;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  vertical-align: top;
+  font-weight: bold;
+}
+/* line 138, ../sass/components/_fresh.scss */
+table tr td {
+  border-right: 1px solid #faf3de;
+  border-bottom: 1px solid #faf3de;
+  padding: 10px;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+/* line 151, ../sass/components/_fresh.scss */
+table tr.even,
+table tr.odd {
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  padding: 0.1em 0.6em;
+}
+/* line 156, ../sass/components/_fresh.scss */
+table tr.odd td {
+  background-color: #f7f7f7;
+}
+/* line 160, ../sass/components/_fresh.scss */
+table tr.odd:hover td,
+table tr:hover td {
+  background-color: #fcf1ed;
+}
+
+/* line 165, ../sass/components/_fresh.scss */
+#page-title {
+  color: #eb4e3a;
+}
+
+/* line 170, ../sass/components/_fresh.scss */
+.view-bannerslider ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 173, ../sass/components/_fresh.scss */
+.view-bannerslider ul li {
+  display: block;
+}
+
+/* line 179, ../sass/components/_fresh.scss */
+#admin-menu-icon img {
+  width: 15px;
+  height: 15px;
+}
+
+/** ---------------------------------  */
+/* line 186, ../sass/components/_fresh.scss */
+#header-over-bg {
+  background: url(../images/header-bg3.png) repeat-x;
+  height: 330px;
+}
+
+/* line 191, ../sass/components/_fresh.scss */
+#header-over {
+  height: 330px;
+}
+@media (max-width: 480px) {
+  /* line 191, ../sass/components/_fresh.scss */
+  #header-over {
+    background: url(../images/header-bg2_480.png) no-repeat center center;
+  }
+}
+@media (min-width: 481px) and (max-width: 959px) {
+  /* line 191, ../sass/components/_fresh.scss */
+  #header-over {
+    background: url(../images/header-bg2_959.png) no-repeat center center;
+  }
+}
+@media (min-width: 960px) {
+  /* line 191, ../sass/components/_fresh.scss */
+  #header-over {
+    background: transparent url(../images/header-bg2.png) no-repeat center center;
+  }
+}
+
+/* line 206, ../sass/components/_fresh.scss */
+#header-bar {
+  background: url("../images/header-bar-center1.png") repeat-x;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+/* line 211, ../sass/components/_fresh.scss */
+#header-bar a {
+  color: white;
+  text-decoration: none;
+}
+/* line 217, ../sass/components/_fresh.scss */
+#header-bar #header-bar-center {
+  height: 67px;
+}
+/* line 220, ../sass/components/_fresh.scss */
+#header-bar #header-bar-left {
+  background: url("../images/header-bar-left1.png") repeat-x;
+  height: 67px;
+  width: 60px;
+}
+/* line 225, ../sass/components/_fresh.scss */
+#header-bar #header-bar-right {
+  background: url("../images/header-bar-right1.png") repeat-x;
+  height: 67px;
+  width: 60px;
+}
+/* line 231, ../sass/components/_fresh.scss */
+#header-bar #header-bar-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+/* line 238, ../sass/components/_fresh.scss */
+#header-bar #header-bar-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+/* line 244, ../sass/components/_fresh.scss */
+#header-bar #header-bar-center-text {
+  padding: 0 67px;
+}
+@media all and (max-width: 480px) {
+  /* line 206, ../sass/components/_fresh.scss */
+  #header-bar {
+    background: url("../images/header-bar-center2.png") repeat-x;
+  }
+  /* line 250, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-center {
+    height: 134px;
+  }
+  /* line 253, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-left {
+    background: url("../images/header-bar-left2.png") repeat-x;
+    height: 134px;
+    width: 60px;
+  }
+  /* line 258, ../sass/components/_fresh.scss */
+  #header-bar #header-bar-right {
+    background: url("../images/header-bar-right2.png") repeat-x;
+    height: 134px;
+    width: 60px;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 959px) {
+  /* line 206, ../sass/components/_fresh.scss */
+  #header-bar {
+   /*  background: url("../images/header-bar-center3.png") repeat-x;
+    #header-bar-center {
+      height:100px;
+    }
+    #header-bar-left {
+      background: url("../images/header-bar-left3.png") repeat-x;
+      height:100px;
+
+    }
+    #header-bar-right {
+      background: url("../images/header-bar-right3.png") repeat-x;
+      height:100px;
+
+    } */
+  }
+}
+@media all and (min-width: 960px) {
+  /* line 206, ../sass/components/_fresh.scss */
+  #header-bar {
+    max-width: 1289px;
+    margin: auto;
+  }
+}
+
+/* line 293, ../sass/components/_fresh.scss */
+#user-links ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 296, ../sass/components/_fresh.scss */
+#user-links ul li {
+  display: inline;
+  padding: 0 0.5em;
+}
+@media all and (min-width: 960px) {
+  /* line 311, ../sass/components/_fresh.scss */
+  #user-links ul {
+    padding: 0.5em;
+  }
+}
+
+/* line 319, ../sass/components/_fresh.scss */
+#conference-statistics span {
+  background: white;
+  color: #eb4e3a;
+  padding: 0.2em;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+/* line 327, ../sass/components/_fresh.scss */
+#conference-statistics div {
+  float: left;
+}
+@media all and (min-width: 960px) {
+  /* line 340, ../sass/components/_fresh.scss */
+  #conference-statistics div {
+    padding: 0.5em 1em;
+  }
+}
+
+/* line 347, ../sass/components/_fresh.scss */
+#social-links ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 350, ../sass/components/_fresh.scss */
+#social-links ul li {
+  display: inline;
+}
+/* line 358, ../sass/components/_fresh.scss */
+#social-links .facebook,
+#social-links .twitter,
+#social-links .gplus,
+#social-links .linkedin,
+#social-links .rss {
+  text-indent: -2000px;
+  font-size: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  float: left;
+  padding-right: 0.5em;
+}
+/* line 368, ../sass/components/_fresh.scss */
+#social-links .facebook {
+  background: url(../images/fb1.png) no-repeat;
+}
+/* line 372, ../sass/components/_fresh.scss */
+#social-links .twitter {
+  background: url(../images/twitter1.png) no-repeat;
+}
+/* line 375, ../sass/components/_fresh.scss */
+#social-links .gplus {
+  background: url(../images/linkedin1.png) no-repeat;
+}
+/* line 378, ../sass/components/_fresh.scss */
+#social-links .linkedin {
+  background: url(../images/linkedin1.png) no-repeat;
+}
+/* line 381, ../sass/components/_fresh.scss */
+#social-links .rss {
+  background: url(../images/rss1.png) no-repeat;
+}
+@media all and (min-width: 960px) {
+  /* line 394, ../sass/components/_fresh.scss */
+  #social-links ul {
+    padding: 0.5em 0;
+  }
+}
+
+/* line 401, ../sass/components/_fresh.scss */
+#header-bar-center #user-links {
+  text-align: right;
+}
+/* line 404, ../sass/components/_fresh.scss */
+#header-bar-center #conference-statistics {
+  text-align: left;
+}
+/* line 406, ../sass/components/_fresh.scss */
+#header-bar-center #conference-statistics ul {
+  margin: 0;
+  padding: 0.5em;
+}
+/* line 409, ../sass/components/_fresh.scss */
+#header-bar-center #conference-statistics ul li {
+  display: inline;
+  padding: 0.5em;
+}
+@media all and (max-width: 480px) {
+  /* line 400, ../sass/components/_fresh.scss */
+  #header-bar-center {
+    font-size: 0.70em;
+  }
+  /* line 420, ../sass/components/_fresh.scss */
+  #header-bar-center #conference-statistics {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+  }
+  /* line 423, ../sass/components/_fresh.scss */
+  #header-bar-center #user-links {
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+  }
+  /* line 430, ../sass/components/_fresh.scss */
+  #header-bar-center #conference-statistics ul {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+  /* line 433, ../sass/components/_fresh.scss */
+  #header-bar-center #conference-statistics ul li {
+    display: block;
+    padding: 0 0.2em 0 0;
+  }
+  /* line 440, ../sass/components/_fresh.scss */
+  #header-bar-center #user-links {
+    font-size: 1.1em;
+  }
+  /* line 442, ../sass/components/_fresh.scss */
+  #header-bar-center #user-links ul {
+    padding: 0.5em 0;
+  }
+  /* line 444, ../sass/components/_fresh.scss */
+  #header-bar-center #user-links ul li {
+    display: block;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 959px) {
+  /* line 400, ../sass/components/_fresh.scss */
+  #header-bar-center {
+    font-size: 0.9em;
+  }
+  /* line 455, ../sass/components/_fresh.scss */
+  #header-bar-center #conference-statistics {
+    float: left;
+    width: 75%;
+    margin-left: 0%;
+    margin-right: -75%;
+  }
+  /* line 458, ../sass/components/_fresh.scss */
+  #header-bar-center #user-links {
+    float: left;
+    width: 25%;
+    margin-left: 75%;
+    margin-right: -100%;
+  }
+}
+@media all and (min-width: 960px) {
+  /* line 400, ../sass/components/_fresh.scss */
+  #header-bar-center {
+    /*  #social-links {
+       @include zen-grid-item(1, 4);
+     } */
+  }
+  /* line 466, ../sass/components/_fresh.scss */
+  #header-bar-center #conference-statistics {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+  }
+  /* line 469, ../sass/components/_fresh.scss */
+  #header-bar-center #user-links {
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+  }
+}
+
+/* line 478, ../sass/components/_fresh.scss */
+#main {
+  padding-top: 1em;
+}
+/* line 480, ../sass/components/_fresh.scss */
+#main #content {
+  background: #faf3de;
+  min-height: 30em;
+}
+/* line 483, ../sass/components/_fresh.scss */
+#main #content h1.title {
+  text-transform: uppercase;
+}
+
+/* line 492, ../sass/components/_fresh.scss */
+#page-bottom-links-over .block,
+#main .block,
+#footer .block {
+  background: #faf3de;
+  padding: 0.5em 1em;
+}
+/* line 495, ../sass/components/_fresh.scss */
+#page-bottom-links-over .block h2.block-title,
+#main .block h2.block-title,
+#footer .block h2.block-title {
+  color: #eb4e3a;
+  text-transform: uppercase;
+  line-height: 1.7em;
+}
+
+/* line 503, ../sass/components/_fresh.scss */
+#footer {
+  margin-top: 1em;
+}
+/* line 505, ../sass/components/_fresh.scss */
+#footer #block-block-1 {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  clear: both;
+  padding: 1em 0;
+}
+/* line 511, ../sass/components/_fresh.scss */
+#footer #block-block-1 > div {
+  padding: 0.5em;
+}
+
+/* node */
+/* line 519, ../sass/components/_fresh.scss */
+.submitted {
+  color: #a5a4a4;
+  font-size: 0.9em;
+}
+
+/* line 525, ../sass/components/_fresh.scss */
+.node-news p {
+  margin: 0;
+}
+
+/* line 531, ../sass/components/_fresh.scss */
+.node-news.node-teaser .field-name-field-news-image {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+/* line 536, ../sass/components/_fresh.scss */
+.node-news.node-teaser ul.links {
+  clear: both;
+  float: right;
+}
+
+/* line 543, ../sass/components/_fresh.scss */
+.view-people {
+  clear: both;
+  float: left;
+  width: 100%;
+}
+/* line 547, ../sass/components/_fresh.scss */
+.view-people .views-row {
+  font-size: 0.9em;
+  float: left;
+  margin: 1em;
+  width: 150px;
+  height: 250px;
+  overflow: hidden;
+  text-align: center;
+}
+/* line 556, ../sass/components/_fresh.scss */
+.view-people .views-row p {
+  margin: 0;
+}
+
+/* line 562, ../sass/components/_fresh.scss */
+#page-bottom-links-over {
+  margin-top: 1em;
+  text-align: center;
+}
+
+/* line 573, ../sass/components/_fresh.scss */
+#block-layout-social-facebook-gplus-twitter #social-media-widgets .social-media {
+  padding-top: 1em;
+  text-align: center;
+  overflow: hidden;
+}
+@media all and (min-width: 960px) {
+  /* line 581, ../sass/components/_fresh.scss */
+  #block-layout-social-facebook-gplus-twitter #social-media-widgets #social-media-twitter {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 584, ../sass/components/_fresh.scss */
+  #block-layout-social-facebook-gplus-twitter #social-media-widgets #social-media-gplus {
+    float: left;
+    width: 33.33333%;
+    margin-left: 33.33333%;
+    margin-right: -66.66667%;
+  }
+  /* line 587, ../sass/components/_fresh.scss */
+  #block-layout-social-facebook-gplus-twitter #social-media-widgets #social-media-fb {
+    float: left;
+    width: 33.33333%;
+    margin-left: 66.66667%;
+    margin-right: -100%;
+  }
+}
+
+/* line 598, ../sass/components/_fresh.scss */
+#block-layout-flickr-gallery #flickr_badge_uber_wrapper,
+#block-layout-flickr-gallery #flickr_badge_wrapper {
+  width: 100%;
+  text-align: center;
+}
+/* line 602, ../sass/components/_fresh.scss */
+#block-layout-flickr-gallery .flickr_badge_image {
+  /* float: left; */
+  display: inline;
+}
+/* line 606, ../sass/components/_fresh.scss */
+#block-layout-flickr-gallery #flickr_badge_source {
+  clear: both;
+  text-align: center;
+}
+
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */

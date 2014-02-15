@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Timeslot feature.
+ */
+
+include_once 'timeslot.features.inc';

@@ -5,3 +5,69 @@
  */
 
 include_once 'layout.features.inc';
+
+
+/**
+ * Implements hook_init().
+ */
+function layout_init() {
+  $nodes_redirect = array('bannerslider');
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == '' ) {
+    $node = node_load(arg(1));
+    if (in_array($node->type, $nodes_redirect) && !user_access('administer application')) {
+      drupal_goto('<front>', array(), 301);
+    }
+  }
+}
+
+/**
+ * Implements hook_block_info()).
+ */
+function layout_block_info() {
+  $blocks['social_facebook_gplus_twitter'] = array(
+    'info' => t('social_facebook_gplus_twitter'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['flickr_gallery'] = array(
+    'info' => t('flickr_gallery'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function layout_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'social_facebook_gplus_twitter':
+      $block['subject'] = t('Social media profiles');
+      $block['content'] = theme('social_media');
+      break;
+    case 'flickr_gallery':
+      $block['subject'] = t('Flickr gallery');
+      $block['content'] = theme('flickr');
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function layout_theme($existing, $type, $theme, $path) {
+  return array(
+    'social_media' => array(
+      'variables' => array(),
+      'template' => 'social-media',
+    ),
+    'flickr' => array(
+      'variables' => array(),
+      'template' => 'flickr',
+    ),
+  );
+}

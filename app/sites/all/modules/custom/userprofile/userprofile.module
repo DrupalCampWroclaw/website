@@ -1,0 +1,50 @@
+<?php
+/**
+ * @file
+ * Code for the UserProfile feature.
+ */
+
+include_once 'userprofile.features.inc';
+
+
+/**
+ * Social links in header of page.
+ *
+ * @return
+ *   HTML output.
+ */
+function userprofile_header_bar() {
+  $output = '';
+
+  $menu_links = array();
+
+  if (user_is_logged_in()) {
+    global $user;
+    $menu_links[] = array(
+      'href' =>  'user/' . $user->uid,
+      'title' => t('My profile'),
+    );
+    $menu_links[] = array(
+      'href' =>  'user/logout',
+      'title' => t('Logout'),
+    );
+    // Todo
+    // My sessions.
+  }
+  else {
+    $menu_links[] = array(
+      'href' =>  'user/register',
+      'title' => t('Register'),
+    );
+    $menu_links[] = array(
+      'href' =>  'user/login',
+      'title' => t('Login'),
+    );
+  }
+
+  $output .= theme('links',  array(
+                'links' => $menu_links,
+                'attributes' => array('class' => array('user-links'))));
+
+  return $output;
+}

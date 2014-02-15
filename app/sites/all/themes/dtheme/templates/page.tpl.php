@@ -8,113 +8,88 @@
  */
 ?>
 
-<div id="page">
+<div id="page-all">
 
-  <header class="header" id="header" role="banner">
+  <div id="header-over-bg">
+    <div id="header-over">
+      <div id="header-bar" class="clearfix">
+        <div id="header-bar-center">
+         <div id="header-bar-left">
+         </div>
+          <div id="header-bar-center-text" class="clearfix">
+            <div id="conference-statistics"><?php print $confstats; ?></div>
+            <div id="user-links"><?php print $userlinks; ?></div>
+            <?php /*<div id="social-links" ><?php print $sociallinks; ?></div>*/ ?>
+          </div>
 
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
-    <?php endif; ?>
-
-    <?php if ($site_name || $site_slogan): ?>
-      <div class="header__name-and-slogan" id="name-and-slogan">
-        <?php if ($site_name): ?>
-          <h1 class="header__site-name" id="site-name">
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
-          </h1>
-        <?php endif; ?>
-
-        <?php if ($site_slogan): ?>
-          <div class="header__site-slogan" id="site-slogan"><?php print $site_slogan; ?></div>
-        <?php endif; ?>
+          <div id="header-bar-right">
+          </div>
+        </div>
       </div>
-    <?php endif; ?>
-
-    <?php if ($secondary_menu): ?>
-      <nav class="header__secondary-menu" id="secondary-menu" role="navigation">
-        <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => $secondary_menu_heading,
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </nav>
-    <?php endif; ?>
-
-    <?php print render($page['header']); ?>
-
-  </header>
-
-  <div id="main">
-
-    <div id="content" class="column" role="main">
-      <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php print render($tabs); ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
     </div>
-
-    <div id="navigation">
-
-      <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation" tabindex="-1">
-          <?php
-          // This code snippet is hard to modify. We recommend turning off the
-          // "Main menu" on your sub-theme's settings form, deleting this PHP
-          // code block, and, instead, using the "Menu block" module.
-          // @see https://drupal.org/project/menu_block
-          print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'class' => array('links', 'inline', 'clearfix'),
-            ),
-            'heading' => array(
-              'text' => t('Main menu'),
-              'level' => 'h2',
-              'class' => array('element-invisible'),
-            ),
-          )); ?>
-        </nav>
-      <?php endif; ?>
-
-      <?php print render($page['navigation']); ?>
-
-    </div>
-
-    <?php
-      // Render the sidebars to see if there's anything in them.
-      $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
-    ?>
-
-    <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
-        <?php print $sidebar_first; ?>
-        <?php print $sidebar_second; ?>
-      </aside>
-    <?php endif; ?>
-
   </div>
+
+  <div id="mainmenu-over">
+    <div id="mainmenu" class="clearfix">
+      <?php print render($page['navigation']); ?>
+    </div>
+  </div>
+
+  <div id="main-over">
+    <div id="main">
+
+      <div id="content" class="column" role="main">
+        <?php print render($page['highlighted']); ?>
+        <?php print $breadcrumb; ?>
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+        <?php print $messages; ?>
+        <?php print render($tabs); ?>
+        <?php print render($page['help']); ?>
+        <?php if ($action_links): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php print render($page['content_top']); ?>
+        <?php print render($page['content']); ?>
+        <?php print render($page['content_bottom']); ?>
+        <?php print $feed_icons; ?>
+      </div>
+
+
+      <?php
+        // Render the sidebars to see if there's anything in them.
+        $sidebar_first  = render($page['sidebar_first']);
+        $sidebar_second = render($page['sidebar_second']);
+      ?>
+
+      <?php if ($sidebar_first || $sidebar_second): ?>
+        <aside class="sidebars">
+          <?php print $sidebar_first; ?>
+          <?php print $sidebar_second; ?>
+        </aside>
+      <?php endif; ?>
+
+    </div>
+  </div>  <!-- end main-over -->
 
   <?php print render($page['footer']); ?>
 
 </div>
 
 <?php print render($page['bottom']); ?>
+
+<div id="page-bottom-links-over">
+  <div id="page-bottom-links" class="block">
+  <a href="https://github.com/DrupalCampWroclaw" target="_blank">DrupalCamp Wroclaw on GitHub</a>
+   <br/>
+    <a href="http://2012.drupalcampwroclaw.pl/" target="_blank">DrupalCamp Wroclaw 2012</a>
+     | <a href="http://2013.drupalcampwroclaw.pl/"  target="_blank">DrupalCamp Wroclaw 2013</a>
+     | <a href="http://www.drupalday.pl/"  target="_blank">DrupalDay</a>
+     | <a href="http://www.drupalidzienastudia.pl/"  target="_blank">Drupal idzie na studia </a>
+     | <a href="https://groups.drupal.org/poland"  target="_blank">Drupal Groups - Poland</a>
+  </div>
+</div>

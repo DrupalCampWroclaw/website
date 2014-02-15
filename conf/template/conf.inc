@@ -10,7 +10,7 @@ PARAM_SITE_DIRECTORY=default
 
 PARAM_SITE_URI=www.drupalcampwroclaw.local
 
-PARAM_PROJECT_IS_NEW="yes"
+PARAM_PROJECT_IS_NEW="no"
 
 PARAM_INSTALLATION_PROFILE="drupalcampwroclaw"
 
