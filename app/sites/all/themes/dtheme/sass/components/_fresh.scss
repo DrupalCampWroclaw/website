@@ -416,7 +416,6 @@ table {
     }
     #user-links {
       @include zen-grid-item(2, 3);
-
     }
 
      #conference-statistics {
@@ -557,4 +556,35 @@ table {
 #page-bottom-links-over{
   margin-top: 1em;
   text-align: center;
+}
+
+#block-layout-social-facebook-gplus-twitter {
+/*   clear: both;
+  float: left;
+  width: 100%; */
+
+  #social-media-widgets{
+
+
+    .social-media {
+      padding-top: 1em;
+      text-align: center;
+    }
+
+   @media all and (min-width: 960px) {
+    $zen-column-count: 3;
+      #social-media-twitter {
+        @include zen-grid-item(1, 1);
+      }
+      #social-media-gplus {
+         @include zen-grid-item(1, 2);
+      }
+      #social-media-fb{
+        @include zen-grid-item(1, 3);
+      }
+
+    }
+  }
+
+
 }

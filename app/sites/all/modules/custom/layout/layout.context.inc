@@ -44,11 +44,11 @@ function layout_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-12',
         ),
-        'block-1' => array(
-          'module' => 'block',
-          'delta' => '1',
+        'layout-social_facebook_gplus_twitter' => array(
+          'module' => 'layout',
+          'delta' => 'social_facebook_gplus_twitter',
           'region' => 'footer',
-          'weight' => '10',
+          'weight' => '5',
         ),
       ),
     ),

@@ -45,3 +45,12 @@ function application_install() {
   $theme_settings['toggle_main_menu'] = 0;
   variable_set('theme_settings', $theme_settings);
 }
+
+/**
+ * Update 2014-02-15
+ */
+function application_update_7019() {
+    // Flush caches.
+  drupal_flush_all_caches();
+  application_api_features_revert(application_features_list());
+}
