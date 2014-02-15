@@ -28,6 +28,10 @@ function layout_block_info() {
     'info' => t('social_facebook_gplus_twitter'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['flickr_gallery'] = array(
+    'info' => t('flickr_gallery'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
 
   return $blocks;
 }
@@ -44,6 +48,10 @@ function layout_block_view($delta = '') {
       $block['subject'] = t('Social media profiles');
       $block['content'] = theme('social_media');
       break;
+    case 'flickr_gallery':
+      $block['subject'] = t('Flickr gallery');
+      $block['content'] = theme('flickr');
+      break;
   }
   return $block;
 }
@@ -56,6 +64,10 @@ function layout_theme($existing, $type, $theme, $path) {
     'social_media' => array(
       'variables' => array(),
       'template' => 'social-media',
+    ),
+    'flickr' => array(
+      'variables' => array(),
+      'template' => 'flickr',
     ),
   );
 }

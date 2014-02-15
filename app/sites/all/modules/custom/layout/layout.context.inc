@@ -50,6 +50,12 @@ function layout_context_default_contexts() {
           'region' => 'footer',
           'weight' => '5',
         ),
+        'layout-flickr_gallery' => array(
+          'module' => 'layout',
+          'delta' => 'flickr_gallery',
+          'region' => 'footer',
+          'weight' => '6',
+        ),
       ),
     ),
   );

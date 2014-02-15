@@ -40,6 +40,12 @@ a:visited {
   padding: 0.25em 1em;
 }
 
+.sidebars{
+   @media (max-width: 480px) {
+    margin-top: 1em;
+   }
+}
+
 #mainmenu-over {
   background: url(../images/menu-bg1.png);
   margin-top: 0em;
@@ -559,9 +565,7 @@ table {
 }
 
 #block-layout-social-facebook-gplus-twitter {
-/*   clear: both;
-  float: left;
-  width: 100%; */
+
 
   #social-media-widgets{
 
@@ -569,6 +573,7 @@ table {
     .social-media {
       padding-top: 1em;
       text-align: center;
+      overflow: hidden;
     }
 
    @media all and (min-width: 960px) {
@@ -586,5 +591,22 @@ table {
     }
   }
 
+}
 
+#block-layout-flickr-gallery {
+  #flickr_badge_uber_wrapper,
+  #flickr_badge_wrapper {
+    width: 100%;
+    text-align: center;
+  }
+  .flickr_badge_image{
+    /* float: left; */
+    display: inline;
+  }
+  #flickr_badge_source {
+    clear: both;
+
+
+    text-align: center;
+  }
 }
