@@ -32,6 +32,9 @@ function layout_block_info() {
     'info' => t('flickr_gallery'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['sessions'] = array(
+    'info' => t('Sessions'),
+  );
 
   return $blocks;
 }
@@ -52,6 +55,10 @@ function layout_block_view($delta = '') {
       $block['subject'] = t('Flickr gallery');
       $block['content'] = theme('flickr');
       break;
+    case 'sessions':
+      $block['subject'] = t('Sessions');
+      $block['content'] = theme('sessions');
+      break;
   }
   return $block;
 }
@@ -68,6 +75,10 @@ function layout_theme($existing, $type, $theme, $path) {
     'flickr' => array(
       'variables' => array(),
       'template' => 'flickr',
+    ),
+    'sessions' => array(
+      'variables' => array(),
+      'template' => 'sessions',
     ),
   );
 }
