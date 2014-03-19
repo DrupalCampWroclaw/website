@@ -24,6 +24,7 @@ function application_help($path, $arg) {
 function application_features_list() {
   $features = array(
     'application',
+    'news',
     'layout',
   );
   return $features;
