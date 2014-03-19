@@ -54,3 +54,12 @@ function application_update_7019() {
   drupal_flush_all_caches();
   application_api_features_revert(application_features_list());
 }
+
+/**
+ * Update 2014-03-19
+ */
+function application_update_7020() {
+    // Flush caches.
+  drupal_flush_all_caches();
+  application_api_features_revert(application_features_list());
+}
