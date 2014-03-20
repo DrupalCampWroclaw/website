@@ -32,6 +32,13 @@ function sponsor_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php print l(t(\'All sponsors\'), \'sponsors\'); ?>
+';
   /* No results behavior: Global: PHP */
   $handler->display->display_options['empty']['php']['id'] = 'php';
   $handler->display->display_options['empty']['php']['table'] = 'views';
@@ -43,8 +50,21 @@ function sponsor_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Sponsor Logo */
+  $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['field'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
+    'image_style' => 'width175px',
+    'image_link' => 'content',
+  );
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -63,6 +83,13 @@ function sponsor_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
+  );
+  /* Filter criterion: Content: Sponsor Type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_value']['id'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['field'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['value'] = array(
+    'diamond' => 'diamond',
   );
 
   /* Display: Block */
@@ -102,19 +129,35 @@ function sponsor_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No gold sponsors yet.\')  . \' \' . l(t(\'Become a sponsor\'), \'sponsors\'); ?>';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Sponsor website */
+  $handler->display->display_options['fields']['field_sponsor_website']['id'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['table'] = 'field_data_field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['field'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sponsor_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_sponsor_website']['type'] = 'link_plain';
+  /* Field: Content: Sponsor Logo */
+  $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['field'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
+    'image_style' => 'width450px',
+    'image_link' => 'content',
+  );
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -134,33 +177,173 @@ function sponsor_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
+  /* Filter criterion: Content: Sponsor Type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_value']['id'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['field'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['value'] = array(
+    'all' => 'all',
+    'diamond' => 'diamond',
+    'platinium' => 'platinium',
+    'gold' => 'gold',
+    'silver' => 'silver',
+    'bronze' => 'bronze',
+    'party' => 'party',
+  );
 
   /* Display: diamond */
   $handler = $view->new_display('block', 'diamond', 'block');
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No diamond sponsors yet.\')  . \' \' . l(t(\'Become a sponsor\'), \'sponsors\'); ?>';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  /* Filter criterion: Content: Sponsor Type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_value']['id'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['field'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['value'] = array(
+    'diamond' => 'diamond',
+  );
 
   /* Display: platinium */
   $handler = $view->new_display('block', 'platinium', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Platinium sponsors';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: PHP */
-  $handler->display->display_options['empty']['php']['id'] = 'php';
-  $handler->display->display_options['empty']['php']['table'] = 'views';
-  $handler->display->display_options['empty']['php']['field'] = 'php';
-  $handler->display->display_options['empty']['php']['empty'] = TRUE;
-  $handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'No platinium sponsors yet.\')  . \' \' . l(t(\'Become a sponsor\'), \'sponsors\');; ?>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Sponsor website */
+  $handler->display->display_options['fields']['field_sponsor_website']['id'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['table'] = 'field_data_field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['field'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sponsor_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_sponsor_website']['type'] = 'link_plain';
+  /* Field: Content: Sponsor Logo */
+  $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['field'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
+    'image_style' => 'width350px',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  /* Filter criterion: Content: Sponsor Type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_value']['id'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['field'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['value'] = array(
+    'platinium' => 'platinium',
+  );
 
   /* Display: gold */
   $handler = $view->new_display('block', 'gold', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Gold sponsors';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Sponsor website */
+  $handler->display->display_options['fields']['field_sponsor_website']['id'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['table'] = 'field_data_field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['field'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sponsor_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_sponsor_website']['type'] = 'link_plain';
+  /* Field: Content: Sponsor Logo */
+  $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['field'] = 'field_sponsor_logo';
+  $handler->display->display_options['fields']['field_sponsor_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['path'] = '[field_sponsor_website]';
+  $handler->display->display_options['fields']['field_sponsor_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
+    'image_style' => 'width300px',
+    'image_link' => '',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  /* Filter criterion: Content: Sponsor Type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_value']['id'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['field'] = 'field_sponsor_type_value';
+  $handler->display->display_options['filters']['field_sponsor_type_value']['value'] = array(
+    'gold' => 'gold',
+  );
   $translatables['sponsors_frontpage_block'] = array(
     t('Master'),
     t('Diamond sponsors'),

@@ -22,6 +22,30 @@ function layout_ctools_plugin_api($module = NULL, $api = NULL) {
 function layout_image_default_styles() {
   $styles = array();
 
+  // Exported image style: width175px.
+  $styles['width175px'] = array(
+    'name' => 'width175px',
+    'label' => 'width175px',
+    'effects' => array(
+      6 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 175,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: width200px.
   $styles['width200px'] = array(
     'name' => 'width200px',

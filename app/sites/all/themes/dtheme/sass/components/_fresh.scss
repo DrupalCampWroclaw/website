@@ -43,13 +43,20 @@ a:visited {
 
 .sidebars{
    @media (max-width: 480px) {
-    margin-top: 1em;
+    padding-top: 1em;
+    clear: both;
    }
 }
 
 #mainmenu-over {
   background: url(../images/menu-bg1.png);
   margin-top: 0em;
+}
+
+@media (max-width: 768px) {
+  .sidebars .block{
+    clear: both;
+  }
 }
 
 #mainmenu {
@@ -481,6 +488,7 @@ table {
   #content{
     background: $bg1;
     min-height: 30em;
+
     h1.title {
       text-transform: uppercase;
     }
@@ -547,10 +555,23 @@ table {
   }
 }
 
+@media all and (max-width: 768px) {
+  .page-attendees #content {
+    clear: both;
+    float: left;
+    width: 100%;
+  }
+}
+
 .view-people{
   clear: both;
   float: left;
   width: 100%;
+  .view-content {
+    clear: both;
+    float: left;
+    width: 100%;
+  }
   .views-row{
     font-size: 0.9em;
     float: left;
@@ -661,34 +682,78 @@ table {
     float: left;
   }
 
+  @media (min-width: 768px) {
+
+
+
+    .views-row{
+      float: left;
+      width: 50%;
+      text-align: center;
+    }
+
+    // Gold
+    .view-display-id-attachment_2{
+      .views-row{
+        width: 33%;
+      }
+    }
+    // Gold
+    .view-display-id-attachment_3{
+      .views-row{
+        width: 33%;
+      }
+    }
+    // Gold
+    .view-display-id-attachment_4{
+      .views-row{
+        width: 25%;
+      }
+    }
+    // Gold
+    .view-display-id-attachment_5{
+      .views-row{
+        width: 100%;
+      }
+    }
+  }
+}
+
+#footer-inner{
+  .block {
+    width: 100%;
+    clear: both;
+    float: left;
+  }
+}
+.view-id-sponsors_frontpage_block {
+  text-align: center;
+}
+.view-id-sponsors_frontpage_block.view-display-id-block{
+
   .views-row{
     float: left;
     width: 50%;
-    text-align: center;
   }
+}
 
-  // Gold
-  .view-display-id-attachment_2{
-    .views-row{
-      width: 33%;
-    }
+.view-id-sponsors_frontpage_block.view-display-id-block_1 {
+  .views-row{
+    float: left;
+    width: 50%;
   }
-  // Gold
-  .view-display-id-attachment_3{
-    .views-row{
-      width: 33%;
-    }
+}
+
+.view-id-sponsors_frontpage_block.view-display-id-block_2 {
+  .views-row{
+    float: left;
+    width: 33%;
   }
-  // Gold
-  .view-display-id-attachment_4{
-    .views-row{
-      width: 25%;
-    }
-  }
-  // Gold
-  .view-display-id-attachment_5{
-    .views-row{
-      width: 100%;
-    }
+}
+
+.view-sponsors-diamond-block{
+  text-align: center;
+  .view-footer{
+    margin-top: 1em;
   }
 }
