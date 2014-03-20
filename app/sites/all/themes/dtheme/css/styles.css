@@ -2449,8 +2449,13 @@ table tr:hover td {
   font-weight: bold;
 }
 
-/* Comments */
 /* line 634, ../sass/components/_fresh.scss */
+.node-sponsor.view-mode-full .field-name-field-sponsor-logo {
+  border: 1px solid #e0dac6;
+}
+
+/* Comments */
+/* line 641, ../sass/components/_fresh.scss */
 .comment {
   border: 1px solid #e0dac6;
   -webkit-border-radius: 5px;
@@ -2459,13 +2464,43 @@ table tr:hover td {
   margin-bottom: 1.5em;
   padding: 1em;
 }
-/* line 641, ../sass/components/_fresh.scss */
+/* line 648, ../sass/components/_fresh.scss */
 .comment header p {
   margin: 0;
 }
-/* line 644, ../sass/components/_fresh.scss */
+/* line 651, ../sass/components/_fresh.scss */
 .comment .field p {
   margin: 0.5em 0;
+}
+
+/* line 657, ../sass/components/_fresh.scss */
+.view-sponsors-page h3 {
+  color: #eb4e3a;
+  width: 100%;
+  clear: both;
+  float: left;
+}
+/* line 664, ../sass/components/_fresh.scss */
+.view-sponsors-page .views-row {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+/* line 672, ../sass/components/_fresh.scss */
+.view-sponsors-page .view-display-id-attachment_2 .views-row {
+  width: 33%;
+}
+/* line 678, ../sass/components/_fresh.scss */
+.view-sponsors-page .view-display-id-attachment_3 .views-row {
+  width: 33%;
+}
+/* line 684, ../sass/components/_fresh.scss */
+.view-sponsors-page .view-display-id-attachment_4 .views-row {
+  width: 25%;
+}
+/* line 690, ../sass/components/_fresh.scss */
+.view-sponsors-page .view-display-id-attachment_5 .views-row {
+  width: 100%;
 }
 
 /* SMACSS theme rules */
