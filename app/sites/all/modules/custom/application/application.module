@@ -26,6 +26,11 @@ function application_features_list() {
     'application',
     'news',
     'layout',
+    'page',
+    'sponsor',
+    'text_formats',
+    'timeslot',
+    'userprofile',
   );
   return $features;
 }
