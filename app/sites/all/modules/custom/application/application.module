@@ -24,7 +24,13 @@ function application_help($path, $arg) {
 function application_features_list() {
   $features = array(
     'application',
+    'news',
     'layout',
+    'page',
+    'sponsor',
+    'text_formats',
+    'timeslot',
+    'userprofile',
   );
   return $features;
 }

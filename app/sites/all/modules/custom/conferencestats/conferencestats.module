@@ -28,8 +28,8 @@ function conferencestats_header_bar() {
   $days_left = conferencestats_get_day_left();
   $sessions = conferencestats_get_sessions_count();
   $output .= '<ul>';
-  $output .= '<li>' . t('Attendees') . ': <span>' . $attendees . '</span></li>';
-  $output .= '<li>' . t('Sessions') . ': <span>' . $sessions . '</span></li>';
+  $output .= '<li>' . l(t('Attendees'), 'attendees') . ': <span>' . $attendees . '</span></li>';
+  $output .= '<li>' . l(t('Sessions'), 'sessions/proposed') . ': <span>' . $sessions . '</span></li>';
   if ($days_left) {
     $output .= '<li>' . t('Time left') . ': <span>' . $days_left . '</span> ' . t('days') . '</li>';
   }

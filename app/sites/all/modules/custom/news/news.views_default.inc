@@ -75,6 +75,8 @@ function news_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'DrupalCamp Wrocław';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';
@@ -84,7 +86,7 @@ function news_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'All News';
+  $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['path'] = 'news';
   $translatables['news_frontpage'] = array(
@@ -104,7 +106,7 @@ function news_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Page'),
-    t('All News'),
+    t('DrupalCamp Wrocław'),
   );
   $export['news_frontpage'] = $view;
 

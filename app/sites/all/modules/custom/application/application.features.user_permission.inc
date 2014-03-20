@@ -37,6 +37,16 @@ function application_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'access comments'.
+  $permissions['access comments'] = array(
+    'name' => 'access comments',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -154,6 +164,13 @@ function application_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'administer comments'.
+  $permissions['administer comments'] = array(
+    'name' => 'administer comments',
+    'roles' => array(),
+    'module' => 'comment',
   );
 
   // Exported permission: 'administer content translations'.
@@ -659,6 +676,13 @@ function application_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit own comments'.
+  $permissions['edit own comments'] = array(
+    'name' => 'edit own comments',
+    'roles' => array(),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'edit own field_session_status'.
   $permissions['edit own field_session_status'] = array(
     'name' => 'edit own field_session_status',
@@ -789,6 +813,15 @@ function application_user_default_permissions() {
     'module' => 'services',
   );
 
+  // Exported permission: 'post comments'.
+  $permissions['post comments'] = array(
+    'name' => 'post comments',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'protected from spambot scans'.
   $permissions['protected from spambot scans'] = array(
     'name' => 'protected from spambot scans',
@@ -837,6 +870,15 @@ function application_user_default_permissions() {
     'name' => 'skip CAPTCHA',
     'roles' => array(),
     'module' => 'captcha',
+  );
+
+  // Exported permission: 'skip comment approval'.
+  $permissions['skip comment approval'] = array(
+    'name' => 'skip comment approval',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'comment',
   );
 
   // Exported permission: 'translate admin strings'.
