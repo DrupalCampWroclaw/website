@@ -4,6 +4,7 @@
 
 $grey1: #ececec;
 $grey2: #a5a4a4;
+$grey3: #e0dac6;
 $blue1: #007aac;
 $orange1: #faf3de;
 $bg1: #faf3de;
@@ -614,5 +615,33 @@ table {
 
 
     text-align: center;
+  }
+}
+
+.node-session.view-mode-full {
+  ul.links {
+    margin: 1em 0;
+
+    display: block;
+
+  }
+  .flag-wrapper{
+    font-weight: bold;
+  }
+}
+
+/* Comments */
+.comment {
+  border: 1px solid $grey3;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 1.5em;
+  padding: 1em;
+  header p {
+    margin: 0;;
+  }
+  .field p{
+    margin: 0.5em 0;
   }
 }

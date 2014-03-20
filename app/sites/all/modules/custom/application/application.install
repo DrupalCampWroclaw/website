@@ -63,3 +63,37 @@ function application_update_7020() {
   drupal_flush_all_caches();
   application_api_features_revert(application_features_list());
 }
+
+/**
+ * Update 2014-03-20
+ */
+function application_update_7022() {
+   // Enable modules.
+  $module_list = array(
+    'comment',
+  );
+  module_enable($module_list);
+  module_list(TRUE, FALSE);
+  // Flush caches.
+  drupal_flush_all_caches();
+}
+
+/**
+ * Update 2014-03-20
+ */
+function application_update_7023() {
+
+  $nodes = node_load_multiple(array(), array('type' => 'session'));
+  foreach ($nodes as $node) {
+    $node->comment = COMMENT_NODE_OPEN;
+    node_save($node);
+  }
+
+  $nodes = node_load_multiple(array(), array('type' => 'news'));
+  foreach ($nodes as $node) {
+    $node->comment = COMMENT_NODE_OPEN;
+    node_save($node);
+  }
+
+  application_api_features_revert(application_features_list());
+}

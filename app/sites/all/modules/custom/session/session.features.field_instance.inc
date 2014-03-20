@@ -22,7 +22,7 @@ function session_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -79,7 +79,7 @@ function session_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_session_experience_level',
     'label' => 'Experience level',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
