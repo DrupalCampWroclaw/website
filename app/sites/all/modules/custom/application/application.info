@@ -1,7 +1,7 @@
 name = Application
 core = 7.x
 package = APP
-version = 7.x-1.0-beta24
+version = 7.x-1.0-beta25
 project = application
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
@@ -36,6 +36,7 @@ dependencies[] = i18n_string
 dependencies[] = image
 dependencies[] = imce
 dependencies[] = imce_mkdir
+dependencies[] = job
 dependencies[] = jquery_update
 dependencies[] = layout
 dependencies[] = list

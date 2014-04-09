@@ -107,3 +107,28 @@ function application_update_7024() {
   drupal_flush_all_caches();
   application_api_features_revert(application_features_list());
 }
+
+/**
+ * Update 2014-04-09
+ */
+function application_update_7025() {
+     // Enable modules.
+  $module_list = array(
+    'job',
+  );
+  module_enable($module_list);
+  module_list(TRUE, FALSE);
+  // Flush caches.
+  drupal_flush_all_caches();
+  application_api_features_revert(application_features_list());
+
+  $item = array(
+    'link_path' => 'jobs',
+    'link_title' =>t('Jobs'),
+    'menu_name' => 'main-menu',
+    'weight' => 30,
+    'plid' => 0,
+    'module' => 'menu',
+  );
+  menu_link_save($item);
+}

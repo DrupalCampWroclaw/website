@@ -2565,6 +2565,16 @@ table tr:hover td {
   margin-top: 1em;
 }
 
+/* line 762, ../sass/components/_fresh.scss */
+.profile .user-picture {
+  float: none;
+}
+
+/* line 769, ../sass/components/_fresh.scss */
+.page-jobs #content table td {
+  width: 50%;
+}
+
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */

@@ -103,10 +103,13 @@ function session_field_default_field_bases() {
   // Exported field_base: 'field_session_speakers'
   $field_bases['field_session_speakers'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_session_speakers',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'users' => array(
         'columns' => array(

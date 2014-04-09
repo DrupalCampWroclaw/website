@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Job feature.
+ */
+
+include_once 'job.features.inc';
