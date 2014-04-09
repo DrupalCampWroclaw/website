@@ -5,3 +5,16 @@
  */
 
 include_once 'session.features.inc';
+
+/**
+ * Implements hook_form_alter();
+ */
+function session_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'session_node_form') {
+    // Disable session submit after end date.
+    if (REQUEST_TIME > strtotime(variable_get('session_end_date', '2014-04-10')) && !user_access('administer application')  ) {
+      drupal_set_message(t('Submitting session is no longer possible.'));
+      drupal_goto('<front>');
+    }
+  }
+}
