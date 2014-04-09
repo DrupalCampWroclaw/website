@@ -315,6 +315,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['fields']['field_sponsor_logo']['label'] = '';
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['path'] = '[field_sponsor_website]';
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_sponsor_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(

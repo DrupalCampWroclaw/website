@@ -762,3 +762,13 @@ table {
 .profile .user-picture {
   float: none;
 }
+
+.page-jobs{
+  #content {
+    table {
+      td {
+        width: 50%;
+      }
+    }
+  }
+}

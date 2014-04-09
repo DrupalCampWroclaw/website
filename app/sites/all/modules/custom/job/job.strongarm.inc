@@ -1,68 +1,68 @@
 <?php
 /**
  * @file
- * sponsor.strongarm.inc
+ * job.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function sponsor_strongarm() {
+function job_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_sponsor';
+  $strongarm->name = 'comment_anonymous_job';
   $strongarm->value = 0;
-  $export['comment_anonymous_sponsor'] = $strongarm;
+  $export['comment_anonymous_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_sponsor';
+  $strongarm->name = 'comment_default_mode_job';
   $strongarm->value = 1;
-  $export['comment_default_mode_sponsor'] = $strongarm;
+  $export['comment_default_mode_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_sponsor';
+  $strongarm->name = 'comment_default_per_page_job';
   $strongarm->value = '50';
-  $export['comment_default_per_page_sponsor'] = $strongarm;
+  $export['comment_default_per_page_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_sponsor';
+  $strongarm->name = 'comment_form_location_job';
   $strongarm->value = 1;
-  $export['comment_form_location_sponsor'] = $strongarm;
+  $export['comment_form_location_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_sponsor';
+  $strongarm->name = 'comment_job';
   $strongarm->value = '1';
-  $export['comment_preview_sponsor'] = $strongarm;
+  $export['comment_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_sponsor';
+  $strongarm->name = 'comment_preview_job';
   $strongarm->value = '1';
-  $export['comment_sponsor'] = $strongarm;
+  $export['comment_preview_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_sponsor';
+  $strongarm->name = 'comment_subject_field_job';
   $strongarm->value = 1;
-  $export['comment_subject_field_sponsor'] = $strongarm;
+  $export['comment_subject_field_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__sponsor';
+  $strongarm->name = 'field_bundle_settings_node__job';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -93,67 +93,51 @@ function sponsor_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__sponsor'] = $strongarm;
+  $export['field_bundle_settings_node__job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_node_extended_sponsor';
-  $strongarm->value = 1;
-  $export['i18n_node_extended_sponsor'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_node_options_sponsor';
-  $strongarm->value = array();
-  $export['i18n_node_options_sponsor'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_sponsor';
+  $strongarm->name = 'language_content_type_job';
   $strongarm->value = '0';
-  $export['language_content_type_sponsor'] = $strongarm;
+  $export['language_content_type_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_sponsor';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
-  $export['menu_options_sponsor'] = $strongarm;
+  $strongarm->name = 'menu_options_job';
+  $strongarm->value = array();
+  $export['menu_options_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_sponsor';
+  $strongarm->name = 'menu_parent_job';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_sponsor'] = $strongarm;
+  $export['menu_parent_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_sponsor';
+  $strongarm->name = 'node_options_job';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_sponsor'] = $strongarm;
+  $export['node_options_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_sponsor';
-  $strongarm->value = '0';
-  $export['node_preview_sponsor'] = $strongarm;
+  $strongarm->name = 'node_preview_job';
+  $strongarm->value = '1';
+  $export['node_preview_job'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_sponsor';
+  $strongarm->name = 'node_submitted_job';
   $strongarm->value = 0;
-  $export['node_submitted_sponsor'] = $strongarm;
+  $export['node_submitted_job'] = $strongarm;
 
   return $export;
 }
