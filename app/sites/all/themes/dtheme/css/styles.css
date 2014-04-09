@@ -2565,6 +2565,12 @@ table tr:hover td {
   margin-top: 1em;
 }
 
+/* line 762, ../sass/components/_fresh.scss */
+.profile .user-picture {
+  float: none;
+  margin: 0 1em 1em 0;
+}
+
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */
