@@ -26,3 +26,4 @@ features[variable][] = menu_parent_room
 features[variable][] = node_options_room
 features[variable][] = node_preview_room
 features[variable][] = node_submitted_room
+project status url = http://updates-drupal.drupalcampwroclaw.pl/release-history

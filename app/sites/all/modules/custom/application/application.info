@@ -17,6 +17,7 @@ dependencies[] = context_ui
 dependencies[] = contextual
 dependencies[] = cookiec
 dependencies[] = ctools
+dependencies[] = date_views
 dependencies[] = dblog
 dependencies[] = devdata
 dependencies[] = diff

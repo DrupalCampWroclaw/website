@@ -2575,6 +2575,11 @@ table tr:hover td {
   width: 50%;
 }
 
+/* line 778, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .pager {
+  display: none;
+}
+
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */

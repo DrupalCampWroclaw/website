@@ -105,9 +105,22 @@ function page_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'language' => array(
+          'weight' => '0',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+      ),
       'display' => array(
         'language' => array(
           'default' => array(

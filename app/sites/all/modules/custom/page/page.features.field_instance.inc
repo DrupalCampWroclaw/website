@@ -54,9 +54,61 @@ function page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_view'
+  $field_instances['node-page-field_view'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'viewfield',
+        'settings' => array(),
+        'type' => 'viewfield_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_view',
+    'label' => 'View',
+    'required' => 0,
+    'settings' => array(
+      'allowed_views' => array(
+        'jobs' => 0,
+        'news_frontpage' => 0,
+        'people' => 0,
+        'sessions' => 0,
+        'sessions_accepted_calendar' => 'sessions_accepted_calendar',
+        'sessions_user' => 0,
+        'sponsors_diamond_block' => 0,
+        'sponsors_frontpage_block' => 0,
+        'sponsors_page' => 0,
+        'timeslots' => 0,
+        'timeslots_for_session' => 0,
+      ),
+      'force_default' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'viewfield',
+      'settings' => array(),
+      'type' => 'viewfield_select',
+      'weight' => 31,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('View');
 
   return $field_instances;
 }

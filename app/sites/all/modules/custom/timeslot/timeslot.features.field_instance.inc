@@ -41,10 +41,10 @@ function timeslot_field_default_field_instances() {
     'label' => 'Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
+      'default_value' => 'strtotime',
+      'default_value2' => 'strtotime',
+      'default_value_code' => '2014-05-17',
+      'default_value_code2' => '2014-05-17',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
