@@ -27,6 +27,7 @@ function application_features_list() {
     'news',
     'layout',
     'page',
+    'room',
     'sponsor',
     'text_formats',
     'timeslot',

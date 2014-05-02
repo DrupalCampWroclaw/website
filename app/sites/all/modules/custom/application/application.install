@@ -137,6 +137,14 @@ function application_update_7025() {
  * Update 2014-05-02
  */
 function application_update_7026() {
+    // Enable modules.
+  $module_list = array(
+    'auto_nodetitle',
+    'room',
+  );
+  module_enable($module_list);
+  module_list(TRUE, FALSE);
+
   drupal_flush_all_caches();
   application_api_features_revert(application_features_list());
 }
