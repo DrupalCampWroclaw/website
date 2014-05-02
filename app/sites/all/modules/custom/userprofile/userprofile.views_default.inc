@@ -36,6 +36,10 @@ function userprofile_views_default_views() {
   $handler->display->display_options['relationships']['user_to_file']['id'] = 'user_to_file';
   $handler->display->display_options['relationships']['user_to_file']['table'] = 'file_usage';
   $handler->display->display_options['relationships']['user_to_file']['field'] = 'user_to_file';
+  /* Relationship: User: Content authored */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'users';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
@@ -107,6 +111,11 @@ function userprofile_views_default_views() {
 
   /* Display: Attendees */
   $handler = $view->new_display('page', 'Attendees', 'page');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: File Usage: File */
+  $handler->display->display_options['relationships']['user_to_file']['id'] = 'user_to_file';
+  $handler->display->display_options['relationships']['user_to_file']['table'] = 'file_usage';
+  $handler->display->display_options['relationships']['user_to_file']['field'] = 'user_to_file';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -147,12 +156,13 @@ function userprofile_views_default_views() {
   $handler->display->display_options['filters']['uid']['value'] = array(
     0 => '1',
   );
-  /* Filter criterion: User: Roles */
-  $handler->display->display_options['filters']['rid']['id'] = 'rid';
-  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
-  $handler->display->display_options['filters']['rid']['field'] = 'rid';
-  $handler->display->display_options['filters']['rid']['value'] = array(
-    5 => '5',
+  /* Filter criterion: Content: Status (field_session_status) */
+  $handler->display->display_options['filters']['field_session_status_value']['id'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['table'] = 'field_data_field_session_status';
+  $handler->display->display_options['filters']['field_session_status_value']['field'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['field_session_status_value']['value'] = array(
+    1 => '1',
   );
   $handler->display->display_options['path'] = 'speakers';
 
@@ -160,6 +170,11 @@ function userprofile_views_default_views() {
   $handler = $view->new_display('page', 'Team', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Team';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: File Usage: File */
+  $handler->display->display_options['relationships']['user_to_file']['id'] = 'user_to_file';
+  $handler->display->display_options['relationships']['user_to_file']['table'] = 'file_usage';
+  $handler->display->display_options['relationships']['user_to_file']['field'] = 'user_to_file';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -195,6 +210,7 @@ function userprofile_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('File'),
+    t('nodes'),
     t('<p>[field_user_first_name] [field_user_last_name]</p>
 <p>[field_user_organization]</p>'),
     t('Speakers'),
