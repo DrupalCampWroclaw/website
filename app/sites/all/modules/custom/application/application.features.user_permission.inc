@@ -736,7 +736,6 @@ function application_user_default_permissions() {
     'name' => 'flag session_vote',
     'roles' => array(
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'flag',
   );
@@ -922,7 +921,6 @@ function application_user_default_permissions() {
     'name' => 'unflag session_vote',
     'roles' => array(
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'flag',
   );
