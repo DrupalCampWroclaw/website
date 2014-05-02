@@ -258,6 +258,13 @@ function session_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['field_session_speakers']['delta_offset'] = '0';
+  /* Field: Content: Session Language */
+  $handler->display->display_options['fields']['field_session_language']['id'] = 'field_session_language';
+  $handler->display->display_options['fields']['field_session_language']['table'] = 'field_data_field_session_language';
+  $handler->display->display_options['fields']['field_session_language']['field'] = 'field_session_language';
+  $handler->display->display_options['fields']['field_session_language']['relationship'] = 'reverse_field_session_timeslot_node';
+  $handler->display->display_options['fields']['field_session_language']['label'] = '';
+  $handler->display->display_options['fields']['field_session_language']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_timeslot_date) */
   $handler->display->display_options['sorts']['field_timeslot_date_value']['id'] = 'field_timeslot_date_value';
   $handler->display->display_options['sorts']['field_timeslot_date_value']['table'] = 'field_data_field_timeslot_date';
