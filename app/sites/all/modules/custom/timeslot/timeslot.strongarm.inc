@@ -14,8 +14,29 @@ function timeslot_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_timeslot';
-  $strongarm->value = 'edit-comment';
+  $strongarm->value = 'edit-display';
   $export['additional_settings__active_tab_timeslot'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_timeslot';
+  $strongarm->value = '[node:field_timeslot_date] [node:field-timeslot-room:title] ';
+  $export['ant_pattern_timeslot'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_timeslot';
+  $strongarm->value = 0;
+  $export['ant_php_timeslot'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_timeslot';
+  $strongarm->value = '1';
+  $export['ant_timeslot'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -111,11 +132,28 @@ function timeslot_strongarm() {
         'title' => array(
           'weight' => '-5',
         ),
+        'path' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__timeslot'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_timeslot';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_timeslot'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_timeslot';
+  $strongarm->value = array();
+  $export['i18n_node_options_timeslot'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -161,7 +199,7 @@ function timeslot_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_timeslot';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_timeslot'] = $strongarm;
 
   return $export;

@@ -41,10 +41,10 @@ function timeslot_field_default_field_instances() {
     'label' => 'Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
+      'default_value' => 'strtotime',
+      'default_value2' => 'strtotime',
+      'default_value_code' => '2014-05-17',
+      'default_value_code2' => '2014-05-17',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -63,9 +63,49 @@ function timeslot_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-timeslot-field_timeslot_room'
+  $field_instances['node-timeslot-field_timeslot_room'] = array(
+    'bundle' => 'timeslot',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_timeslot_room',
+    'label' => 'Room',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Date');
+  t('Room');
 
   return $field_instances;
 }
