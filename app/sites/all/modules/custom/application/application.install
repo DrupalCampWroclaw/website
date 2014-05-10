@@ -160,3 +160,18 @@ function application_update_7027() {
   drupal_flush_all_caches();
   application_api_features_revert(application_features_list());
 }
+
+/**
+ * Update 2014-05-10
+ */
+function application_update_7028() {
+    // Enable modules.
+  $module_list = array(
+    'botcha',
+  );
+  module_enable($module_list);
+  module_list(TRUE, FALSE);
+
+  drupal_flush_all_caches();
+  application_api_features_revert(application_features_list());
+}
