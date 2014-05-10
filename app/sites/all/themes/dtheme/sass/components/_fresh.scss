@@ -779,4 +779,61 @@ table {
   .pager {
     display: none;
   }
+
+
+
+  .calendar-agenda-items,
+  .calendar-agenda-items,
+  .calendar-dayview-hour{
+
+  }
+
+  .calendar-calendar {
+
+    table {
+      th {
+        background: $blue1;
+        color: white;
+      }
+
+      td {
+        width: 50%;
+      }
+
+      .multi-day,
+      .calendar-agenda-hour,
+      .calendar-dayview-hour{
+        display: none;
+      }
+
+      .date-display-single{
+        font-weight: bold;
+        font-size: 1.2em;
+        color: $red1;
+      }
+
+      .views-field.views-field-field-session-speakers{
+        a {
+          color: $grey2;
+        }
+      }
+
+      .views-field.views-field-title{
+        font-size: 1.2em;
+      }
+
+      .calendar.dayview,
+      td.single-day div.dayview,
+      td .inner div, .calendar-calendar td .inner div a {
+        background: white !important;
+      }
+
+      td.single-day div.dayview {
+        background: white;
+        width: auto;
+        padding: 0px 3px;
+        overflow: hidden;
+      }
+    }
+  }
 }
