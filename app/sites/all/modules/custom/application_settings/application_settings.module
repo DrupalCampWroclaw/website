@@ -1,0 +1,76 @@
+<?php
+/**
+ * @file
+ * Code for the Application Settings module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function application_settings_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#application_settings':
+      $output = '';
+      $output .= '<p>' . t('Application Settings module') . '</p>';
+      return $output;
+  }
+}
+/**
+ * Implements hook_menu().
+ */
+function application_settings_menu() {
+  $items = array();
+  // Placeholder for application project page.
+  $items['admin/application/settings'] = array(
+    'title' => 'Application Settings',
+    'page callback' => 'application_settings_overview_page',
+    'file' => 'application_settings.pages.inc',
+    'access arguments' => array('administer application'),
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'management',
+    'weight' => 50,
+  );
+  $items['admin/application/settings/%'] = array(
+    'title' => 'Application Settings',
+    'page callback' => 'application_settings_forms_page',
+    'file' => 'application_settings.pages.inc',
+    'access arguments' => array('administer application'),
+    'menu_name' => 'management',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50,
+  );
+  return $items;
+}
+
+/**
+ * List of applciation variables.
+ * @return array
+ */
+function application_settings_variables() {
+  $variables = array();
+
+  $variables['frontpage']['frontpage_top'] = array(
+    '#type' => 'textarea',
+    '#title' => t('frontpage- top text'),
+  );
+
+  return $variables;
+}
+
+/**
+ * Get variable value depends on current language.
+ *
+ * @global type $language
+ * @param type $variable_name
+ * @param type $default_value
+ * @return type
+ */
+function variable_get_lang($variable_name, $default_value = '') {
+  global $language ;
+  $output = variable_get($variable_name . '_' . $language->language, $default_value);
+
+ // if (user_access('administer application')) {
+ //   $output .= '<p>' . l('Edit', 'admin/application/settings') . '</p>';
+ // }
+  return $output;
+}

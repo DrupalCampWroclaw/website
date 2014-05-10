@@ -26,6 +26,12 @@ function layout_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'layout-frontpage_top' => array(
+          'module' => 'layout',
+          'delta' => 'frontpage_top',
+          'region' => 'content_top',
+          'weight' => '-10',
+        ),
         'views-sponsors_frontpage_block-block' => array(
           'module' => 'views',
           'delta' => 'sponsors_frontpage_block-block',

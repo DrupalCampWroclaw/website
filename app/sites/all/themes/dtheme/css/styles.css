@@ -2583,6 +2583,48 @@ table tr:hover td {
 .view-sessions-accepted-calendar .pager {
   display: none;
 }
+/* line 794, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table th {
+  background: #007aac;
+  color: white;
+}
+/* line 799, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table td {
+  width: 50%;
+}
+/* line 805, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table .multi-day,
+.view-sessions-accepted-calendar .calendar-calendar table .calendar-agenda-hour,
+.view-sessions-accepted-calendar .calendar-calendar table .calendar-dayview-hour {
+  display: none;
+}
+/* line 809, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table .date-display-single {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #eb4e3a;
+}
+/* line 816, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table .views-field.views-field-field-session-speakers a {
+  color: #a5a4a4;
+}
+/* line 821, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table .views-field.views-field-title {
+  font-size: 1.2em;
+}
+/* line 827, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table .calendar.dayview,
+.view-sessions-accepted-calendar .calendar-calendar table td.single-day div.dayview,
+.view-sessions-accepted-calendar .calendar-calendar table td .inner div, .view-sessions-accepted-calendar .calendar-calendar table .calendar-calendar td .inner div a {
+  background: white !important;
+}
+/* line 831, ../sass/components/_fresh.scss */
+.view-sessions-accepted-calendar .calendar-calendar table td.single-day div.dayview {
+  background: white;
+  width: auto;
+  padding: 0px 3px;
+  overflow: hidden;
+}
 
 /* SMACSS theme rules */
 /* @import "theme-A"; */

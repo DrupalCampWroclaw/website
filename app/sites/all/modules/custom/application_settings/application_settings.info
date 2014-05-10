@@ -1,0 +1,8 @@
+name = Application Settings
+description = Application Settings
+core = 7.x
+package = APP
+version = 7.x-1.0-beta1
+project = layout
+
+project status url = http://updates-drupal.droptica.com/droptica/release-history
