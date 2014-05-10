@@ -168,6 +168,7 @@ function application_update_7028() {
     // Enable modules.
   $module_list = array(
     'botcha',
+    'application_settings',
   );
   module_enable($module_list);
   module_list(TRUE, FALSE);

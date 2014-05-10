@@ -35,6 +35,9 @@ function layout_block_info() {
   $blocks['sessions'] = array(
     'info' => t('Sessions'),
   );
+  $blocks['frontpage_top'] = array(
+    'info' => t('Frontpage Top'), // For youtube streaming.
+  );
 
   return $blocks;
 }
@@ -58,6 +61,10 @@ function layout_block_view($delta = '') {
     case 'sessions':
       $block['subject'] = t('Sessions');
       $block['content'] = theme('sessions');
+      break;
+     case 'frontpage_top':
+      $block['subject'] = '';
+      $block['content'] = variable_get_lang('appset_frontpage_top', '');
       break;
   }
   return $block;
