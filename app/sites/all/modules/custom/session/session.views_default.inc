@@ -407,5 +407,136 @@ function session_views_default_views() {
   );
   $export['sessions_user'] = $view;
 
+  $view = new view();
+  $view->name = 'videos';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Videos';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Videos';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_session_timeslot_target_id']['id'] = 'field_session_timeslot_target_id';
+  $handler->display->display_options['relationships']['field_session_timeslot_target_id']['table'] = 'field_data_field_session_timeslot';
+  $handler->display->display_options['relationships']['field_session_timeslot_target_id']['field'] = 'field_session_timeslot_target_id';
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_user_last_name']['id'] = 'field_user_last_name';
+  $handler->display->display_options['fields']['field_user_last_name']['table'] = 'field_data_field_user_last_name';
+  $handler->display->display_options['fields']['field_user_last_name']['field'] = 'field_user_last_name';
+  $handler->display->display_options['fields']['field_user_last_name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_user_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_last_name']['element_label_colon'] = FALSE;
+  /* Field: User: First name */
+  $handler->display->display_options['fields']['field_user_first_name']['id'] = 'field_user_first_name';
+  $handler->display->display_options['fields']['field_user_first_name']['table'] = 'field_data_field_user_first_name';
+  $handler->display->display_options['fields']['field_user_first_name']['field'] = 'field_user_first_name';
+  $handler->display->display_options['fields']['field_user_first_name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_user_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_first_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_user_first_name] [field_user_last_name]';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Youtube */
+  $handler->display->display_options['fields']['field_youtube']['id'] = 'field_youtube';
+  $handler->display->display_options['fields']['field_youtube']['table'] = 'field_data_field_youtube';
+  $handler->display->display_options['fields']['field_youtube']['field'] = 'field_youtube';
+  $handler->display->display_options['fields']['field_youtube']['label'] = '';
+  $handler->display->display_options['fields']['field_youtube']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_youtube']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_youtube']['settings'] = array(
+    'video_style' => 'normal',
+  );
+  /* Sort criterion: Content: Date -  start date (field_timeslot_date) */
+  $handler->display->display_options['sorts']['field_timeslot_date_value']['id'] = 'field_timeslot_date_value';
+  $handler->display->display_options['sorts']['field_timeslot_date_value']['table'] = 'field_data_field_timeslot_date';
+  $handler->display->display_options['sorts']['field_timeslot_date_value']['field'] = 'field_timeslot_date_value';
+  $handler->display->display_options['sorts']['field_timeslot_date_value']['relationship'] = 'field_session_timeslot_target_id';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'session' => 'session',
+  );
+  /* Filter criterion: Content: Status (field_session_status) */
+  $handler->display->display_options['filters']['field_session_status_value']['id'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['table'] = 'field_data_field_session_status';
+  $handler->display->display_options['filters']['field_session_status_value']['field'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Youtube - Video URL */
+  $handler->display->display_options['filters']['field_youtube_video_url']['id'] = 'field_youtube_video_url';
+  $handler->display->display_options['filters']['field_youtube_video_url']['table'] = 'field_data_field_youtube';
+  $handler->display->display_options['filters']['field_youtube_video_url']['field'] = 'field_youtube_video_url';
+  $handler->display->display_options['filters']['field_youtube_video_url']['operator'] = 'not empty';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'videos';
+  $translatables['videos'] = array(
+    t('Master'),
+    t('Videos'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('author'),
+    t('Content entity referenced from field_session_timeslot'),
+    t('[field_user_first_name] [field_user_last_name]'),
+    t('Page'),
+  );
+  $export['videos'] = $view;
+
   return $export;
 }

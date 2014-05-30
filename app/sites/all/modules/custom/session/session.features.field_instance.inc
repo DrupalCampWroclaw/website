@@ -295,6 +295,49 @@ function session_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-session-field_youtube'
+  $field_instances['node-session-field_youtube'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_youtube',
+    'label' => 'Youtube',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'description_length' => 128,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'video_embed_field',
+      'settings' => array(),
+      'type' => 'video_embed_field_video',
+      'weight' => 33,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Description');
@@ -305,6 +348,7 @@ function session_field_default_field_instances() {
   t('Speakers');
   t('Status');
   t('Upload your slides here as a PDF, or link to them from the description. (This is typically done after your session.)');
+  t('Youtube');
 
   return $field_instances;
 }

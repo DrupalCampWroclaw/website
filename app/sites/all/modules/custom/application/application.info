@@ -1,7 +1,7 @@
 name = Application
 core = 7.x
 package = APP
-version = 7.x-1.0-beta28
+version = 7.x-1.0-beta30
 project = application
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
