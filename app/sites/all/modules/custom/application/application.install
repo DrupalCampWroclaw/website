@@ -176,3 +176,26 @@ function application_update_7028() {
   drupal_flush_all_caches();
   application_api_features_revert(application_features_list());
 }
+
+/**
+ * Update 2014-05-30
+ */
+function application_update_7029() {
+  // Enable modules.
+  $module_list = array(
+    'video_embed_field',
+  );
+  module_enable($module_list);
+  module_list(TRUE, FALSE);
+
+  drupal_flush_all_caches();
+}
+
+
+/**
+ * Update 2014-05-30
+ */
+function application_update_7030() {
+  drupal_flush_all_caches();
+  application_api_features_revert(application_features_list());
+}
